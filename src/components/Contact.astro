@@ -5,7 +5,7 @@ import AeLogoBg from "./AeLogoBg.astro";
 
 <section
   id="contact"
-  class="py-24 md:py-40 bg-(--color-onyx) px-4 sm:px-6 relative overflow-hidden"
+  class="py-24 lg:py-40 bg-(--color-onyx) px-4 sm:px-6 relative overflow-hidden"
 >
   <div
     class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.025]"
@@ -14,16 +14,16 @@ import AeLogoBg from "./AeLogoBg.astro";
   </div>
 
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <!-- Contact info -->
-      <div class="col-span-1 md:col-span-5 md:sticky md:top-32">
+      <div class="col-span-1 lg:col-span-5 lg:sticky lg:top-32">
         <div class="reveal-contact">
           <span
             class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-6"
             >// Iniciar Proyecto</span
           >
           <h2
-            class="font-anton text-5xl md:text-7xl uppercase leading-[0.85] mb-12"
+            class="font-anton text-5xl md:text-7xl uppercase leading-[1.1] lg:leading-[0.85] mb-12"
           >
             Hablemos<br />de tu<br /><span class="text-(--color-gold)"
               >Proyecto</span
@@ -78,37 +78,89 @@ import AeLogoBg from "./AeLogoBg.astro";
               class="w-12 h-12 flex items-center justify-center border border-white/10 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
               aria-label="LinkedIn"
             >
-              <Icon name="Linkedin" class="text-xl" />
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path><rect x="2" y="9" width="4" height="12"></rect><circle
+                  cx="4"
+                  cy="4"
+                  r="2"></circle></svg
+              >
             </a>
             <a
               href="#"
               class="w-12 h-12 flex items-center justify-center border border-white/10 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
               aria-label="GitHub"
             >
-              <Icon name="Github" class="text-xl" />
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path></svg
+              >
             </a>
             <a
               href="#"
               class="w-12 h-12 flex items-center justify-center border border-white/10 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
               aria-label="X / Twitter"
             >
-              <Icon name="Twitter" class="text-xl" />
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path
+                  d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg
+              >
             </a>
             <a
               href="#"
               class="w-12 h-12 flex items-center justify-center border border-white/10 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
               aria-label="Instagram"
             >
-              <Icon name="Instagram" class="text-xl" />
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+                ></rect><path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"
+                ></line></svg
+              >
             </a>
           </div>
         </div>
       </div>
 
       <!-- Contact form -->
-      <div class="col-span-1 md:col-span-7">
+      <div class="col-span-1 lg:col-span-7">
         <form
-          class="reveal-contact flex flex-col gap-10 md:gap-12"
+          class="reveal-contact flex flex-col gap-10 lg:gap-12"
           id="contact-form"
           method="POST"
           action="/api/contact"
@@ -173,28 +225,17 @@ import AeLogoBg from "./AeLogoBg.astro";
                 <input
                   type="radio"
                   name="budget"
-                  value="< $500"
+                  value="S/ 550 - S/ 1,000"
                   class="hidden"
-                /> &lt; $500
+                /> S/ 550 – S/ 1,000
               </label>
               <label class="budget-option">
                 <input
                   type="radio"
                   name="budget"
-                  value="$500 - $2k"
+                  value="S/ 1,000 - S/ 2,500"
                   class="hidden"
-                /> $500 – $2k
-              </label>
-              <label class="budget-option">
-                <input
-                  type="radio"
-                  name="budget"
-                  value="$2k - $5k"
-                  class="hidden"
-                /> $2k – $5k
-              </label>
-              <label class="budget-option">
-                <input type="radio" name="budget" value="$5k+" class="hidden" /> $5k+
+                /> S/ 1,000 – S/ 2,500
               </label>
             </div>
           </div>

@@ -1,83 +1,180 @@
 ---
-import AeLogo from './AeLogo.astro';
+import AeLogo from "./AeLogo.astro";
 ---
 
 <footer id="cta-footer" class="py-24 md:py-32 px-4 sm:px-6 bg-(--color-onyx)">
   <div class="max-w-7xl mx-auto">
     <!-- CTA Banner -->
-    <div class="bg-(--color-gold) text-black p-12 md:p-20 lg:p-32 mb-16 md:mb-24 relative overflow-hidden flex flex-col items-center text-center" id="cta-banner">
-      <div class="absolute inset-0 opacity-[0.05] pointer-events-none border-[20px] md:border-[40px] border-black"></div>
-      <div class="absolute inset-10 md:inset-20 opacity-[0.05] pointer-events-none border border-black border-dashed"></div>
+    <div
+      class="hidden bg-(--color-gold) text-black p-12 md:p-20 lg:p-32 mb-16 md:mb-24 relative overflow-hidden flex flex-col items-center text-center"
+      id="cta-banner"
+    >
+      <div
+        class="absolute inset-0 opacity-[0.05] pointer-events-none border-[20px] md:border-[40px] border-black"
+      >
+      </div>
+      <div
+        class="absolute inset-10 md:inset-20 opacity-[0.05] pointer-events-none border border-black border-dashed"
+      >
+      </div>
 
-      <div class="absolute inset-0 flex items-center justify-end opacity-[0.04] pointer-events-none overflow-hidden">
-        <svg class="w-[300px] h-[300px] md:w-[500px] md:h-[500px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-          <path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" />
+      <div
+        class="absolute inset-0 flex items-center justify-end opacity-[0.04] pointer-events-none overflow-hidden"
+      >
+        <svg
+          class="w-[300px] h-[300px] md:w-[500px] md:h-[500px]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+        >
+          <path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18"></path>
         </svg>
       </div>
 
       <div class="relative z-10">
-        <span class="font-bold uppercase tracking-[0.5em] text-xs mb-6 md:mb-8 block">// Conexión Crítica</span>
-        <h2 class="font-anton text-4xl md:text-7xl lg:text-9xl uppercase mb-8 md:mb-12 leading-none">
+        <span
+          class="font-bold uppercase tracking-[0.5em] text-xs mb-6 md:mb-8 block"
+          >// Conexión Crítica</span
+        >
+        <h2
+          class="font-anton text-4xl md:text-7xl lg:text-9xl uppercase mb-8 md:mb-12 leading-none"
+        >
           ¿Listo para cruzar el puente?
         </h2>
-        <p class="max-w-2xl mx-auto text-lg md:text-xl font-medium mb-8 md:mb-12 opacity-80 leading-relaxed">
-          Transformamos visiones complejas en realidades digitales sólidas. Tu próximo sistema crítico comienza aquí.
+        <p
+          class="max-w-2xl mx-auto text-lg md:text-xl font-medium mb-8 md:mb-12 opacity-80 leading-relaxed"
+        >
+          Transformamos visiones complejas en realidades digitales sólidas. Tu
+          próximo sistema crítico comienza aquí.
         </p>
-        <a href="#contact" class="inline-block px-10 md:px-16 py-4 md:py-6 bg-black text-white font-anton text-2xl md:text-4xl uppercase hover:-translate-y-2 hover:shadow-[12px_12px_0_rgba(0,0,0,0.2)] transition-all">
+        <a
+          href="#contact"
+          class="inline-block px-10 md:px-16 py-4 md:py-6 bg-black text-white font-anton text-2xl md:text-4xl uppercase hover:-translate-y-2 hover:shadow-[12px_12px_0_rgba(0,0,0,0.2)] transition-all"
+        >
           Agendar Auditoría
         </a>
       </div>
     </div>
 
     <!-- Footer links -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-16 mb-16">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-16 mb-16"
+    >
       <div>
         <div class="flex items-center gap-3 mb-6">
           <AeLogo width={36} height={24} class="text-white" />
           <div>
-            <div class="font-anton text-xl uppercase tracking-tighter leading-none">
+            <div
+              class="font-anton text-xl uppercase tracking-tighter leading-none"
+            >
               Anderson <span class="text-(--color-gold)">Espinoza</span>
             </div>
-            <div class="text-[8px] uppercase tracking-[0.3em] opacity-40 font-bold">DevAE</div>
+            <div
+              class="text-[8px] uppercase tracking-[0.3em] opacity-40 font-bold"
+            >
+              DevAE
+            </div>
           </div>
         </div>
-        <p class="text-xs opacity-50 leading-relaxed uppercase tracking-[0.2em] font-bold">
-          Desarrollo Web & Arquitectura Digital<br />Basado en la robustez técnica.
+        <p
+          class="text-xs opacity-50 leading-relaxed uppercase tracking-[0.2em] font-bold"
+        >
+          Desarrollo Web & Arquitectura Digital<br />Basado en la robustez
+          técnica.
         </p>
       </div>
       <div>
-        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">Sitemap</h4>
-        <ul class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60">
-          <li><a href="#services" class="hover:text-(--color-gold) transition-colors">Servicios</a></li>
-          <li><a href="#tech" class="hover:text-(--color-gold) transition-colors">Ecosistema</a></li>
-          <li><a href="#portfolio" class="hover:text-(--color-gold) transition-colors">Casos de Éxito</a></li>
-          <li><a href="#contact" class="hover:text-(--color-gold) transition-colors">Contacto</a></li>
+        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">
+          Sitemap
+        </h4>
+        <ul
+          class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60"
+        >
+          <li>
+            <a
+              href="#services"
+              class="hover:text-(--color-gold) transition-colors">Servicios</a>
+          </li>
+          <li>
+            <a href="#tech" class="hover:text-(--color-gold) transition-colors"
+              >Ecosistema</a>
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="hover:text-(--color-gold) transition-colors"
+              >Casos de Éxito</a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="hover:text-(--color-gold) transition-colors">Contacto</a>
+          </li>
         </ul>
       </div>
       <div>
-        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">Redes</h4>
-        <ul class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60">
-          <li><a href="#" class="hover:text-(--color-gold) transition-colors">LinkedIn</a></li>
-          <li><a href="#" class="hover:text-(--color-gold) transition-colors">Twitter / X</a></li>
-          <li><a href="#" class="hover:text-(--color-gold) transition-colors">GitHub</a></li>
-          <li><a href="#" class="hover:text-(--color-gold) transition-colors">Instagram</a></li>
+        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">
+          Redes
+        </h4>
+        <ul
+          class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60"
+        >
+          <li>
+            <a href="#" class="hover:text-(--color-gold) transition-colors"
+              >LinkedIn</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-(--color-gold) transition-colors"
+              >Twitter / X</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-(--color-gold) transition-colors"
+              >GitHub</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-(--color-gold) transition-colors"
+              >Instagram</a>
+          </li>
         </ul>
       </div>
       <div>
-        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">Contacto</h4>
-        <ul class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60">
-          <li><a href="mailto:aespinozaanco38@gmail.com" class="hover:text-(--color-gold) transition-colors normal-case tracking-normal">aespinozaanco38@gmail.com</a></li>
-          <li><a href="https://wa.me/51991145635" target="_blank" rel="noopener noreferrer" class="hover:text-(--color-gold) transition-colors">+51 991 145 635</a></li>
+        <h4 class="font-anton text-xl uppercase mb-8 text-(--color-gold)">
+          Contacto
+        </h4>
+        <ul
+          class="flex flex-col gap-5 text-xs uppercase tracking-widest font-bold opacity-60"
+        >
+          <li>
+            <a
+              href="mailto:aespinozaanco38@gmail.com"
+              class="hover:text-(--color-gold) transition-colors normal-case tracking-normal"
+              >aespinozaanco38@gmail.com</a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/51991145635"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-(--color-gold) transition-colors"
+              >+51 991 145 635</a>
+          </li>
           <li>Latinoamérica · Global</li>
         </ul>
       </div>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] uppercase tracking-[0.5em] font-bold opacity-30">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] uppercase tracking-[0.5em] font-bold opacity-30"
+    >
       <span>&copy; 2025 Anderson Espinoza · DevAE</span>
       <div class="flex gap-8 md:gap-12">
-        <span class="hover:text-white cursor-pointer transition-colors">Privacidad</span>
-        <span class="hover:text-white cursor-pointer transition-colors">Términos</span>
+        <span class="hover:text-white cursor-pointer transition-colors"
+          >Privacidad</span
+        >
+        <span class="hover:text-white cursor-pointer transition-colors"
+          >Términos</span
+        >
       </div>
     </div>
   </div>
