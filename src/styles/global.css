@@ -27,6 +27,29 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
   }
+
+  /* Hide default cursor on desktop screens */
+  @media (pointer: fine) {
+    html, body, a, button, [role="button"], input, select, textarea, summary, details {
+      cursor: none !important;
+    }
+  }
+
+  /* Mobile typography fixes */
+  @media (max-width: 767px) {
+    p, li, span {
+      line-height: 1.65;
+    }
+
+    .font-anton {
+      line-height: 0.9;
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
 }
 
 @layer utilities {
