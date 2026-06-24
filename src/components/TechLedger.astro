@@ -1,0 +1,59 @@
+---
+const ledgerItems = [
+  {
+    label: '01 / Architectural Design',
+    title: 'Engineered Theme Core',
+    desc: 'Sistemas de diseño atómico implementados sin Page Builders. Rendimiento nativo extremo.',
+    metric: '99/100',
+    metricLabel: 'Lighthouse Performance',
+  },
+  {
+    label: '02 / Scaling Operations',
+    title: 'WooCommerce Enterprise',
+    desc: 'Orquestación de catálogos masivos y sincronización en tiempo real con sistemas externos.',
+    metric: '+500k',
+    metricLabel: 'Request Capacity / Hour',
+  },
+  {
+    label: '03 / Decoupled Future',
+    title: 'Headless / Jamstack WP',
+    desc: 'WordPress como backend de datos con frontends en Next.js via GraphQL para velocidad infinita.',
+    metric: '<120ms',
+    metricLabel: 'Edge Node Response',
+  },
+];
+---
+
+<section id="tech" class="py-24 md:py-40 bg-(--color-onyx) relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 watermark-text select-none pointer-events-none font-anton opacity-[0.04]">
+    WORDPRESS
+  </div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="mb-16 md:mb-32 flex flex-col md:flex-row items-start md:items-baseline gap-6 md:gap-8">
+      <span class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.5em] block md:rotate-90 md:origin-left md:whitespace-nowrap">
+        // Tech Stack
+      </span>
+      <h2 class="font-anton text-5xl md:text-7xl lg:text-9xl uppercase leading-[0.8]">
+        WP<br /><span class="text-(--color-gold)">Mastery</span>
+      </h2>
+    </div>
+
+    <div class="flex flex-col border-t border-white/10" id="ledger-list">
+      {ledgerItems.map((item) => (
+        <div class="reveal-ledger ledger-row py-10 md:py-12 flex flex-col md:flex-row justify-between items-start md:items-end group cursor-default gap-6 md:gap-0">
+          <div class="md:mb-0">
+            <span class="text-(--color-gold) text-xs font-bold uppercase tracking-widest block mb-4">{item.label}</span>
+            <h3 class="text-3xl md:text-5xl font-anton uppercase group-hover:text-(--color-gold) transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm opacity-50 mt-2 max-w-lg">{item.desc}</p>
+          </div>
+          <div class="text-left md:text-right">
+            <span class="text-4xl md:text-6xl font-anton leading-none">{item.metric}</span>
+            <p class="text-xs uppercase font-bold tracking-widest opacity-40 mt-3">{item.metricLabel}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

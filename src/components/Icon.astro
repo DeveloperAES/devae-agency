@@ -1,0 +1,40 @@
+---
+import * as lucide from 'lucide';
+
+type IconNode = [string, Record<string, string | number>, ...(IconNode | string)[]];
+
+interface Props {
+  name: keyof typeof lucide;
+  class?: string;
+  size?: number;
+  strokeWidth?: number;
+}
+
+function escapeAttr(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function renderNode(node: IconNode | string): string {
+  if (typeof node === 'string') return escape(node);
+  const [tag, attrs, ...children] = node;
+  const attrString = Object.entries(attrs)
+    .map(([key, value]) => `${escapeAttr(key)}="${escapeAttr(String(value))}"`)
+    .join(' ');
+  const childrenString = children.map(renderNode).join('');
+  return children.length
+    ? `<${tag} ${attrString}>${childrenString}</${tag}>`
+    : `<${tag} ${attrString} />`;
+}
+
+const { name, class: className, size = 24, strokeWidth = 1.5 } = Astro.props;
+const icon = (lucide as any)[name] as IconNode[] | undefined;
+
+const svg = icon
+  ? `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="${className ? escapeAttr(className) : ''}">${icon.map(renderNode).join('')}</svg>`
+  : '';
+---
+<Fragment set:html={svg} />

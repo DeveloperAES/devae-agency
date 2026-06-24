@@ -1,0 +1,156 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import HeroBento from '../components/HeroBento.astro';
+import Services from '../components/Services.astro';
+import TechLedger from '../components/TechLedger.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="DevAE - Desarrollo Web & Arquitectura Digital por Anderson Espinoza. WordPress, e-commerce y sistemas a medida." />
+    <title>Anderson Espinoza · DevAE | Desarrollo Web & Arquitectura Digital</title>
+  </head>
+  <body class="bg-(--color-onyx) text-white">
+    <Navbar />
+    <main>
+      <HeroBento />
+      <Services />
+      <TechLedger />
+      <Portfolio />
+      <Contact />
+    </main>
+    <Footer />
+
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* Hero reveals */
+      gsap.from('.reveal-hero', {
+        autoAlpha: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0.1,
+        ease: 'power4.out',
+        delay: 0.3,
+      });
+
+      /* Latency counter */
+      const counterEl = document.getElementById('latency-counter');
+      if (counterEl) {
+        const cObj = { v: 200 };
+        gsap.to(cObj, {
+          v: 120,
+          duration: 3,
+          ease: 'power4.out',
+          onUpdate: () => {
+            counterEl.innerText = Math.floor(cObj.v).toString();
+          },
+          scrollTrigger: {
+            trigger: '#dashboard-bento',
+            start: 'top center',
+          },
+        });
+      }
+
+      /* Services reveal */
+      gsap.from('.reveal-service', {
+        scrollTrigger: {
+          trigger: '#services',
+          start: 'top 80%',
+        },
+        autoAlpha: 0,
+        y: 40,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+      });
+
+      /* Ledger reveal */
+      gsap.from('.reveal-ledger', {
+        scrollTrigger: {
+          trigger: '#tech',
+          start: 'top 70%',
+        },
+        autoAlpha: 0,
+        x: -40,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: 'power2.out',
+      });
+
+      /* Portfolio reveal */
+      gsap.from('.reveal-portfolio', {
+        scrollTrigger: {
+          trigger: '#portfolio',
+          start: 'top 80%',
+        },
+        autoAlpha: 0,
+        y: 40,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+      });
+
+      /* Contact reveal */
+      gsap.from('.reveal-contact', {
+        scrollTrigger: {
+          trigger: '#contact',
+          start: 'top 75%',
+        },
+        autoAlpha: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power3.out',
+      });
+
+      /* CTA Banner */
+      gsap.from('#cta-banner', {
+        scrollTrigger: {
+          trigger: '#cta-footer',
+          start: 'top 80%',
+        },
+        autoAlpha: 0,
+        scale: 0.97,
+        duration: 1.2,
+        ease: 'power4.out',
+      });
+
+      /* Portfolio image clip-path reveal */
+      document.querySelectorAll('.portfolio-reveal').forEach((img) => {
+        const htmlImg = img as HTMLElement;
+        gsap.to(htmlImg, {
+          clipPath: 'inset(0 0 0 0)',
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: htmlImg,
+            start: 'top 85%',
+          },
+        });
+
+        const parent = htmlImg.closest('.group');
+        if (parent) {
+          parent.addEventListener('pointerenter', () => {
+            gsap.to(htmlImg, { scale: 1.05, filter: 'grayscale(0%)', duration: 0.6 });
+          });
+          parent.addEventListener('pointerleave', () => {
+            gsap.to(htmlImg, { scale: 1.0, filter: 'grayscale(100%)', duration: 0.4 });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

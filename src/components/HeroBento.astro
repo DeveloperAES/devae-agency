@@ -1,0 +1,75 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section id="dashboard-bento" class="min-h-screen pt-28 pb-12 px-4 sm:px-6 flex flex-col justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-4 min-h-[85vh] md:h-[85vh]">
+    <!-- Main headline tile -->
+    <div class="reveal-hero col-span-1 md:col-span-8 md:row-span-4 bg-(--color-jet) p-8 md:p-12 brutalist-border flex flex-col justify-between relative overflow-hidden group">
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-(--color-gold)/5 blur-3xl rounded-full"></div>
+      <div class="relative z-10 flex flex-col md:flex-row justify-between items-start gap-6">
+        <h1 class="font-anton text-[clamp(3rem,10vw,9rem)] uppercase leading-[0.85] tracking-tighter" id="hero-headline">
+          Construimos<br />la Web<span class="cursor"></span>
+        </h1>
+        <Icon name="Hammer" class="text-6xl md:text-7xl text-(--color-gold) drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
+      </div>
+      <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mt-8 md:mt-0">
+        <p class="text-lg md:text-xl max-w-lg opacity-60 leading-relaxed font-light">
+          Desarrollamos sistemas digitales robustos con precisión arquitectónica y escalabilidad de clase mundial.
+        </p>
+        <div class="text-xs uppercase tracking-widest opacity-40 font-bold border-t border-white/10 pt-4">
+          [ v4.2.0 ] / Architectural Core
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D cube tile -->
+    <div class="reveal-hero col-span-1 md:col-span-4 md:row-span-2 bg-(--color-jet) brutalist-border flex items-center justify-center overflow-hidden relative group min-h-[200px]">
+      <div class="absolute inset-0 bg-gradient-to-br from-(--color-gold)/5 to-transparent"></div>
+      <div class="rotate-wireframe opacity-30 group-hover:opacity-60 transition-opacity duration-700">
+        <Icon name="Box" class="w-28 h-28 md:w-40 md:h-40 text-white" />
+      </div>
+    </div>
+
+    <!-- Latency counter tile -->
+    <div class="reveal-hero col-span-1 md:col-span-4 md:row-span-2 bg-(--color-jet) brutalist-border p-8 flex flex-col justify-center items-center relative overflow-hidden min-h-[200px]">
+      <div class="absolute top-0 left-0 w-full h-1 bg-(--color-gold)/20"></div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-5xl md:text-6xl font-anton text-(--color-gold) leading-none">&lt;</span>
+        <span class="text-6xl md:text-7xl font-anton text-(--color-gold) leading-none" id="latency-counter">200</span>
+        <span class="text-2xl md:text-3xl font-anton text-(--color-gold)/40 uppercase">ms</span>
+      </div>
+      <span class="text-xs uppercase tracking-widest mt-4 opacity-50 font-bold">Tiempo de Respuesta</span>
+    </div>
+
+    <!-- CTA tile -->
+    <a href="#contact" class="reveal-hero col-span-1 md:col-span-4 md:row-span-2 bg-(--color-gold) text-black p-8 md:p-10 flex flex-col justify-between group min-h-[200px]">
+      <div class="flex justify-between items-start">
+        <h3 class="font-anton text-3xl md:text-4xl uppercase leading-none">Inicia tu<br />proyecto</h3>
+        <Icon name="ArrowUpRight" class="text-4xl md:text-5xl" />
+      </div>
+      <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest border-t border-black/10 pt-6">
+        <span class="w-2 h-2 bg-black rounded-full animate-ping"></span>
+        Disponibilidad inmediata
+      </div>
+    </a>
+
+    <!-- Tech stack row -->
+    <div class="reveal-hero col-span-1 md:col-span-8 md:row-span-2 brutalist-border flex flex-col md:flex-row items-start md:items-center px-8 md:px-12 py-8 gap-6 md:gap-16 relative bg-(--color-jet)">
+      <div class="flex flex-col gap-1">
+        <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">01 / Frontend</span>
+        <span class="font-anton text-lg md:text-xl uppercase">React / Next.js / Vue</span>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/10"></div>
+      <div class="flex flex-col gap-1">
+        <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">02 / Backend</span>
+        <span class="font-anton text-lg md:text-xl uppercase">Node.js / WordPress / PHP</span>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/10"></div>
+      <div class="flex flex-col gap-1">
+        <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">03 / Infrastructure</span>
+        <span class="font-anton text-lg md:text-xl uppercase">AWS / Vercel / Docker</span>
+      </div>
+    </div>
+  </div>
+</section>
