@@ -1,5 +1,5 @@
 ---
-import AeLogo from './AeLogo.astro';
+import AeLogo from "./AeLogo.astro";
 ---
 
 <nav
@@ -9,21 +9,34 @@ import AeLogo from './AeLogo.astro';
 >
   <a href="#" class="flex items-center gap-3 group relative z-10">
     <AeLogo width={48} height={32} class="text-white" />
-    <div>
-      <div class="font-anton text-lg uppercase tracking-tighter leading-none">
-        Anderson <span class="text-(--color-gold)">Espinoza</span>
+    <div class="flex items-center gap-2">
+      <div
+        class="hidden lg:block font-anton text-lg uppercase tracking-tighter leading-none"
+      >
+        Agencia de <span class="text-(--color-gold)">Desarrollo Web</span>
       </div>
-      <div class="text-[9px] uppercase tracking-[0.35em] opacity-40 font-bold">
+      <!-- <div class="text-[9px] uppercase tracking-[0.35em] opacity-40 font-bold">
         DevAE · Dev Agency
-      </div>
+      </div> -->
     </div>
   </a>
 
   <!-- Desktop links -->
-  <div class="hidden md:flex gap-8 items-center text-xs uppercase tracking-widest font-bold">
-    <a href="#services" class="hover:text-(--color-gold) transition-colors">Servicios</a>
-    <a href="#tech" class="hover:text-(--color-gold) transition-colors">Tecnología</a>
-    <a href="#portfolio" class="hover:text-(--color-gold) transition-colors">Portfolio</a>
+  <div
+    class="hidden lg:flex gap-8 items-center text-xs uppercase tracking-widest font-bold"
+  >
+    <a href="#services" class="hover:text-(--color-gold) transition-colors"
+      >Servicios</a
+    >
+    <a href="#tech" class="hover:text-(--color-gold) transition-colors"
+      >Tecnología</a
+    >
+    <a href="#portfolio" class="hover:text-(--color-gold) transition-colors"
+      >Portfolio</a
+    >
+    <a href="#pricing" class="hover:text-(--color-gold) transition-colors"
+      >Precios</a
+    >
     <a
       href="#contact"
       class="px-6 py-2 border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
@@ -35,12 +48,19 @@ import AeLogo from './AeLogo.astro';
   <!-- Mobile menu button -->
   <button
     id="mobile-menu-btn"
-    class="md:hidden w-10 h-10 flex items-center justify-center border border-white/20 text-white relative z-10"
+    class="lg:hidden w-10 h-10 flex items-center justify-center border border-white/20 text-white relative z-10"
     aria-label="Abrir menú"
     aria-expanded="false"
     aria-controls="mobile-menu"
   >
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -50,7 +70,7 @@ import AeLogo from './AeLogo.astro';
   <!-- Mobile menu overlay -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 bg-(--color-onyx)/98 backdrop-blur-lg flex-col items-center justify-center gap-8 md:hidden"
+    class="fixed inset-0 z-10 min-h-screen bg-onyx/98 backdrop-blur-lg flex-col items-center justify-center gap-8 lg:hidden"
     style="display: none;"
   >
     <button
@@ -58,53 +78,85 @@ import AeLogo from './AeLogo.astro';
       class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center border border-white/20 text-white"
       aria-label="Cerrar menú"
     >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
 
-    <a href="#services" class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors">Servicios</a>
-    <a href="#tech" class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors">Tecnología</a>
-    <a href="#portfolio" class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors">Portfolio</a>
-    <a href="#contact" class="px-6 py-2 border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors text-sm uppercase tracking-widest font-bold">
+    <a
+      href="#services"
+      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
+      >Servicios</a
+    >
+    <a
+      href="#tech"
+      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
+      >Tecnología</a
+    >
+    <a
+      href="#portfolio"
+      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
+      >Portfolio</a
+    >
+    <a
+      href="#pricing"
+      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors font-bold"
+      >Precios</a
+    >
+    <a
+      href="#contact"
+      class="px-6 py-2 border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors text-sm uppercase tracking-widest font-bold"
+    >
       Contacto
     </a>
   </div>
 </nav>
 
 <script>
-  const nav = document.getElementById('main-nav');
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menuClose = document.getElementById('mobile-menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const nav = document.getElementById("main-nav");
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const menuClose = document.getElementById("mobile-menu-close");
+  const mobileMenu = document.getElementById("mobile-menu");
   let isOpen = false;
 
   function toggleMenu(open: boolean) {
     isOpen = open;
     if (mobileMenu) {
-      mobileMenu.style.display = open ? 'flex' : 'none';
+      mobileMenu.style.display = open ? "flex" : "none";
     }
     if (menuBtn) {
-      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute("aria-expanded", String(open));
     }
   }
 
-  menuBtn?.addEventListener('click', () => toggleMenu(!isOpen));
-  menuClose?.addEventListener('click', () => toggleMenu(false));
+  menuBtn?.addEventListener("click", () => toggleMenu(!isOpen));
+  menuClose?.addEventListener("click", () => toggleMenu(false));
 
-  mobileMenu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => toggleMenu(false));
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => toggleMenu(false));
   });
 
-  window.addEventListener('scroll', () => {
-    if (!nav) return;
-    if (window.scrollY > 80) {
-      nav.style.background = 'rgba(17,17,17,0.97)';
-      nav.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
-    } else {
-      nav.style.background = 'linear-gradient(to bottom, rgba(17,17,17,0.95) 0%, transparent 100%)';
-      nav.style.borderBottom = '1px solid transparent';
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!nav) return;
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(17,17,17,0.97)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      } else {
+        nav.style.background =
+          "linear-gradient(to bottom, rgba(17,17,17,0.95) 0%, transparent 100%)";
+        nav.style.borderBottom = "1px solid transparent";
+      }
+    },
+    { passive: true },
+  );
 </script>

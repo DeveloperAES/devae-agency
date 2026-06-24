@@ -1,136 +1,200 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 
 const projects = [
   {
     id: 1,
-    title: 'Titan Dynamics Cloud',
-    category: 'Sistemas',
-    tags: 'Arquitectura de Sistemas / AWS Integration',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&w=1200&q=80&fit=crop',
-    label: 'System Core Alpha',
+    title: "Ysique",
+    category: "E-commerce",
+    tags: "E-commerce / Tienda Virtual",
+    image: "/projects/ysique.png",
+    label: "Ysique\nStore",
     wide: true,
-    aspect: 'aspect-[21/9]',
+    aspect: "aspect-[21/9]",
+    link: "https://ysique.com/",
   },
   {
     id: 2,
-    title: 'Lumina Store Enterprise',
-    category: 'E-commerce',
-    tags: 'E-commerce / Global Retail',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&w=800&q=80&fit=crop',
-    label: 'Lumina\nRetail',
+    title: "OIG Perú",
+    category: "Corporativo",
+    tags: "Institucional / Corporativo",
+    image: "/projects/oigperu.png",
+    label: "OIG\nPerú",
     wide: false,
-    aspect: 'aspect-[4/5]',
+    aspect: "aspect-[4/5]",
+    link: "https://oigperu.com.pe/",
   },
   {
     id: 3,
-    title: 'Aether Analytics',
-    category: 'Sistemas',
-    tags: 'Data Intelligence Dashboard',
-    image: 'https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&w=800&q=80&fit=crop',
-    label: 'Nexus App',
+    title: "Olva",
+    category: "Sistema",
+    tags: "WordPress Custom / API Integration / CRM",
+    image: "/projects/andersonv9.png",
+    label: "Olva",
     wide: false,
-    aspect: 'aspect-square',
+    aspect: "aspect-square",
+    link: "https://andersonv9.sg-host.com/",
   },
   {
     id: 4,
-    title: 'Vaulted Finance',
-    category: 'Sistemas',
-    tags: 'Web Application / High Security',
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&w=1200&q=80&fit=crop',
-    label: 'Fintech Core',
+    title: "Desarrollo a Medida",
+    category: "Plugin",
+    tags: "Aplicación Web / Integración",
+    image: "/projects/plugin.png",
+    label: "Desarrollo\nCustom",
     wide: true,
-    aspect: 'aspect-[16/7]',
+    aspect: "aspect-[16/7]",
+    link: "#",
+  },
+  {
+    id: 5,
+    title: "Olva Box",
+    category: "Sistema",
+    tags: "En Desarrollo / Sistema",
+    image: "/projects/corporate.png",
+    label: "Olva\nBox\n(WIP)",
+    wide: false,
+    aspect: "aspect-[4/5]",
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "Olva Tracking",
+    category: "Sistema",
+    tags: "En Desarrollo / API REST",
+    image: "/projects/landing.png",
+    label: "Olva\nTracking\n(WIP)",
+    wide: true,
+    aspect: "aspect-[21/9]",
+    link: "#",
   },
 ];
 ---
 
-<section id="portfolio" class="py-24 md:py-40 bg-(--color-onyx) px-4 sm:px-6">
+<section id="portfolio" class="py-20 md:py-40 bg-(--color-onyx) px-4 sm:px-6">
   <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
+    <div
+      class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-24 gap-6 lg:gap-8"
+    >
       <div class="reveal-portfolio">
-        <span class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-4">Portfolio Seleccionado</span>
-        <h2 class="font-anton text-5xl md:text-8xl lg:text-9xl uppercase leading-[0.8]">
-          Arquitecturas<br />Publicadas
+        <span
+          class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-4"
+          >Portafolio Seleccionado</span
+        >
+        <h2
+          class="font-anton text-4xl sm:text-6xl md:text-8xl lg:text-9xl uppercase leading-[1.1] lg:leading-[0.8]"
+        >
+          Proyectos<br />Realizados
         </h2>
       </div>
       <div class="reveal-portfolio flex flex-wrap gap-2" id="portfolio-filters">
-        <button data-filter="all" class="filter-btn px-6 md:px-8 py-2 border-2 border-(--color-gold) text-(--color-gold) text-xs uppercase font-black transition-all">
+        <button
+          data-filter="all"
+          class="filter-btn px-5 md:px-8 py-2 border-2 border-(--color-gold) text-(--color-gold) text-xs uppercase font-black transition-all"
+        >
           Todos
         </button>
-        <button data-filter="E-commerce" class="filter-btn px-6 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all">
+        <button
+          data-filter="E-commerce"
+          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+        >
           E-commerce
         </button>
-        <button data-filter="Sistemas" class="filter-btn px-6 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all">
+        <button
+          data-filter="Sistema"
+          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+        >
           Sistemas
+        </button>
+        <button
+          data-filter="Corporativo"
+          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+        >
+          Corporativo
         </button>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8" id="portfolio-grid">
-      {projects.map((p) => (
-        <div
-          class={`reveal-portfolio portfolio-item group ${p.wide ? 'col-span-1 md:col-span-8' : 'col-span-1 md:col-span-4'}`}
-          data-category={p.category}
-          style="cursor:pointer"
-        >
-          <div class={`${p.aspect} bg-(--color-jet) brutalist-border crosshatch overflow-hidden relative`}>
-            <div class="absolute inset-0 bg-neutral-900 z-10 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-700">
-              <span class="font-anton text-3xl md:text-5xl uppercase opacity-20 tracking-tighter whitespace-pre-line text-center">
-                {p.label}
-              </span>
-            </div>
-            <img
-              src={p.image}
-              alt={p.title}
-              class="portfolio-reveal absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700"
-              decoding="async"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 border-4 border-(--color-gold)/0 group-hover:border-(--color-gold)/30 transition-all duration-700 z-20 pointer-events-none"></div>
-          </div>
-          <div class="mt-6 md:mt-8 flex flex-col md:flex-row justify-between items-start gap-4">
-            <div>
-              <h4 class="font-anton text-2xl md:text-4xl uppercase">{p.title}</h4>
-              <p class="text-xs md:text-sm uppercase font-bold tracking-[0.3em] text-(--color-gold) mt-2">{p.tags}</p>
-            </div>
-            {p.wide && (
-              <div class="flex items-center gap-4 text-(--color-gold)">
-                <span class="font-anton text-lg md:text-xl uppercase">Estudio de Caso</span>
-                <Icon name="ArrowRight" class="text-2xl md:text-3xl" />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8"
+      id="portfolio-grid"
+    >
+      {
+        projects.map((p) => (
+          <a
+            href={p.link}
+            target={p.link !== "#" ? "_blank" : "_self"}
+            rel={p.link !== "#" ? "noopener noreferrer" : ""}
+            class={`reveal-portfolio portfolio-item group block ${p.wide ? "col-span-1 md:col-span-2 lg:col-span-8" : "col-span-1 lg:col-span-4"}`}
+            data-category={p.category}
+            style="cursor:pointer"
+          >
+            <div
+              class={`${p.aspect} bg-(--color-jet) brutalist-border crosshatch overflow-hidden relative`}
+            >
+              <div class="hidden lg:flex absolute inset-0 bg-neutral-900 z-10 items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-700">
+                <span class="font-anton text-3xl md:text-5xl uppercase opacity-20 tracking-tighter whitespace-pre-line text-center">
+                  {p.label}
+                </span>
               </div>
-            )}
-          </div>
-        </div>
-      ))}
+              <img
+                src={p.image}
+                alt={p.title}
+                class="portfolio-reveal absolute inset-0 w-full h-full object-cover grayscale-0 lg:grayscale transition-transform duration-700"
+                decoding="async"
+                loading="lazy"
+              />
+              <div class="hidden lg:block absolute inset-0 border-4 border-(--color-gold)/0 group-hover:border-(--color-gold)/30 transition-all duration-700 z-20 pointer-events-none" />
+            </div>
+            <div class="mt-4 lg:mt-8 flex flex-col lg:flex-row justify-between items-start gap-3 lg:gap-4">
+              <div>
+                <h4 class="font-anton text-xl md:text-4xl uppercase leading-tight">
+                  {p.title}
+                </h4>
+                <p class="text-xs md:text-sm uppercase font-bold tracking-[0.3em] text-(--color-gold) mt-1 md:mt-2">
+                  {p.tags}
+                </p>
+              </div>
+              {p.wide && (
+                <div class="flex items-center gap-3 lg:gap-4 text-(--color-gold)">
+                  <span class="font-anton text-base md:text-xl uppercase">
+                    Ver Proyecto
+                  </span>
+                  <Icon name="ArrowRight" class="text-xl md:text-3xl" />
+                </div>
+              )}
+            </div>
+          </a>
+        ))
+      }
     </div>
   </div>
 </section>
 
 <script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.portfolio-item');
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const items = document.querySelectorAll(".portfolio-item");
 
   filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
 
       filterBtns.forEach((b) => {
         if (b === btn) {
-          b.classList.add('border-(--color-gold)', 'text-(--color-gold)');
-          b.classList.remove('border-white/10', 'text-white/40');
+          b.classList.add("border-(--color-gold)", "text-(--color-gold)");
+          b.classList.remove("border-white/10", "text-white/40");
         } else {
-          b.classList.remove('border-(--color-gold)', 'text-(--color-gold)');
-          b.classList.add('border-white/10', 'text-white/40');
+          b.classList.remove("border-(--color-gold)", "text-(--color-gold)");
+          b.classList.add("border-white/10", "text-white/40");
         }
       });
 
       items.forEach((item) => {
-        const category = item.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          (item as HTMLElement).style.display = 'block';
+        const category = item.getAttribute("data-category");
+        if (filter === "all" || category === filter) {
+          (item as HTMLElement).style.display = "block";
         } else {
-          (item as HTMLElement).style.display = 'none';
+          (item as HTMLElement).style.display = "none";
         }
       });
     });

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "uxui-principles": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/uxui-principles/SKILL.md",
+      "computedHash": "aced134820a97bff3d18389afff009d3ee329e87716ae83a988fb6e3bd29d8c3"
+    }
+  }
+}

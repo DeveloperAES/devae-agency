@@ -1,0 +1,129 @@
+---
+// Custom Cursor Component
+---
+<div id="custom-cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+<div id="custom-cursor-circle" class="custom-cursor-circle" aria-hidden="true"></div>
+
+<script>
+  import { gsap } from 'gsap';
+
+  // Only run cursor scripts on devices that have a pointer (desktop)
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const cursorDot = document.getElementById('custom-cursor-dot');
+    const cursorCircle = document.getElementById('custom-cursor-circle');
+
+    if (cursorDot && cursorCircle) {
+      // Set initial state
+      gsap.set([cursorDot, cursorCircle], { 
+        xPercent: -50, 
+        yPercent: -50,
+        opacity: 0 
+      });
+
+      // Quick setters for performance
+      const xToDot = gsap.quickTo(cursorDot, "x", { duration: 0.08, ease: "power3" });
+      const yToDot = gsap.quickTo(cursorDot, "y", { duration: 0.08, ease: "power3" });
+
+      const xToCircle = gsap.quickTo(cursorCircle, "x", { duration: 0.25, ease: "power2.out" });
+      const yToCircle = gsap.quickTo(cursorCircle, "y", { duration: 0.25, ease: "power2.out" });
+
+      // Track mouse movement
+      window.addEventListener("mousemove", (e) => {
+        // Show cursor elements on first move
+        if (gsap.getProperty(cursorDot, "opacity") === 0) {
+          gsap.to([cursorDot, cursorCircle], { opacity: 1, duration: 0.3 });
+        }
+        xToDot(e.clientX);
+        yToDot(e.clientY);
+        xToCircle(e.clientX);
+        yToCircle(e.clientY);
+      });
+
+      // Show/Hide when mouse leaves window
+      document.addEventListener("mouseleave", () => {
+        gsap.to([cursorDot, cursorCircle], { opacity: 0, duration: 0.3 });
+      });
+
+      document.addEventListener("mouseenter", () => {
+        gsap.to([cursorDot, cursorCircle], { opacity: 1, duration: 0.3 });
+      });
+
+      // Interactive hover effects (Event Delegation)
+      window.addEventListener("mouseover", (e) => {
+        const target = e.target as HTMLElement | null;
+        if (!target) return;
+
+        const isInteractive = target.closest('a, button, [role="button"], .portfolio-item, summary, .budget-option, input, select, textarea, details');
+
+        if (isInteractive) {
+          gsap.to(cursorCircle, {
+            scale: 2.2,
+            backgroundColor: 'rgba(212, 175, 55, 0.12)',
+            borderColor: 'rgba(212, 175, 55, 0.8)',
+            borderWidth: '1px',
+            duration: 0.3
+          });
+          gsap.to(cursorDot, {
+            scale: 0.4,
+            backgroundColor: '#ffffff',
+            duration: 0.3
+          });
+        }
+      });
+
+      window.addEventListener("mouseout", (e) => {
+        const target = e.target as HTMLElement | null;
+        if (!target) return;
+
+        const isInteractive = target.closest('a, button, [role="button"], .portfolio-item, summary, .budget-option, input, select, textarea, details');
+
+        if (isInteractive) {
+          gsap.to(cursorCircle, {
+            scale: 1,
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(212, 175, 55, 0.4)',
+            borderWidth: '1px',
+            duration: 0.3
+          });
+          gsap.to(cursorDot, {
+            scale: 1,
+            backgroundColor: 'var(--color-gold)',
+            duration: 0.3
+          });
+        }
+      });
+    }
+  }
+</script>
+
+<style>
+  /* Base styles for the custom cursor. Active only on mouse-capable devices */
+  @media (pointer: fine) {
+    .custom-cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .custom-cursor-circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background-color: transparent;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transition: background-color 0.3s, border-color 0.3s, border-width 0.3s;
+    }
+  }
+</style>

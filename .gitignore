@@ -23,5 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+<<<<<<< HEAD
 #agents
+=======
+# skills
+>>>>>>> staging
 .agents
