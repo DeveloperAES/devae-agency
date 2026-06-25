@@ -51,7 +51,7 @@ const projects = [
     title: "Olva Box",
     category: "Sistema",
     tags: "En Desarrollo / Sistema",
-    image: "/projects/corporate.png",
+    image: "/projects/olva-box.png",
     label: "Olva\nBox\n(WIP)",
     wide: false,
     aspect: "aspect-[4/5]",
@@ -62,7 +62,7 @@ const projects = [
     title: "Olva Tracking",
     category: "Sistema",
     tags: "En Desarrollo / API REST",
-    image: "/projects/landing.png",
+    image: "/projects/olva-tracking.png",
     label: "Olva\nTracking\n(WIP)",
     wide: true,
     aspect: "aspect-[21/9]",
@@ -130,21 +130,16 @@ const projects = [
             style="cursor:pointer"
           >
             <div
-              class={`${p.aspect} bg-(--color-jet) brutalist-border crosshatch overflow-hidden relative`}
+              class={`${p.aspect} bg-(--color-jet) brutalist-border overflow-hidden relative`}
             >
-              <div class="hidden lg:flex absolute inset-0 bg-neutral-900 z-10 items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-700">
-                <span class="font-anton text-3xl md:text-5xl uppercase opacity-20 tracking-tighter whitespace-pre-line text-center">
-                  {p.label}
-                </span>
-              </div>
               <img
                 src={p.image}
                 alt={p.title}
-                class="portfolio-reveal absolute inset-0 w-full h-full object-cover grayscale-0 lg:grayscale transition-transform duration-700"
+                class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-110 group-hover:scale-105 transition-all duration-700"
                 decoding="async"
                 loading="lazy"
               />
-              <div class="hidden lg:block absolute inset-0 border-4 border-(--color-gold)/0 group-hover:border-(--color-gold)/30 transition-all duration-700 z-20 pointer-events-none" />
+              <div class="hidden lg:block absolute inset-0 border-4 border-(--color-gold)/0 group-hover:border-(--color-gold)/50 transition-all duration-700 z-20 pointer-events-none" />
             </div>
             <div class="mt-4 lg:mt-8 flex flex-col lg:flex-row justify-between items-start gap-3 lg:gap-4">
               <div>

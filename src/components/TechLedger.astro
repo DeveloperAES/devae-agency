@@ -1,59 +1,175 @@
 ---
 const ledgerItems = [
   {
-    label: '01 / WordPress a Medida',
-    title: 'Código Limpio, Sin Builders',
-    desc: 'Desarrollo plantillas y temas desde cero sin Elementor ni Divi. Tu web será ultra rápida, fácil de editar y sin errores de actualización.',
-    metric: '99%',
-    metricLabel: 'Rendimiento Lighthouse',
+    label: '01 / Tu web, más rápida',
+    title: 'Carga en menos de 1 segundo',
+    desc: 'Una web lenta pierde clientes. Las nuestras están optimizadas desde el código para que Google las premie y tus visitas se queden.',
+    metricValue: 99,
+    metricSuffix: '%',
+    metricLabel: 'de velocidad — calificación máxima en Google',
+    metricHuman: true,
   },
   {
-    label: '02 / Tiendas Robustas',
-    title: 'WooCommerce Optimizado',
-    desc: 'Tiendas online preparadas para recibir miles de visitas simultáneas y gestionar catálogos de productos grandes sin caídas.',
-    metric: '100%',
-    metricLabel: 'Checkout Seguro & Rápido',
+    label: '02 / Vende online sin complicaciones',
+    title: 'Tu tienda lista para crecer',
+    desc: 'Gestiona tus productos, stock y pedidos tú mismo, sin pagar a nadie más. Preparada para recibir cientos de clientes a la vez.',
+    metricValue: 100,
+    metricSuffix: '%',
+    metricLabel: 'administrable por ti, sin depender de nosotros',
+    metricHuman: true,
   },
   {
-    label: '03 / WordPress Moderno',
-    title: 'Headless / Jamstack WP',
-    desc: 'Conectamos la administración amigable de WordPress con tecnologías de vanguardia como Next.js/React para velocidad de carga instantánea.',
-    metric: '<1.2s',
-    metricLabel: 'Tiempo de Carga Promedio',
+    label: '03 / Conectada con tus herramientas',
+    title: 'WhatsApp, pagos y más integrados',
+    desc: 'Tu web trabaja con las herramientas que ya usas: WhatsApp, formularios, pasarelas de pago, mapas y cualquier sistema de tu negocio.',
+    metricValue: 24,
+    metricSuffix: 'h',
+    metricLabel: 'de soporte y respuesta garantizada',
+    metricHuman: true,
   },
 ];
 ---
 
 <section id="tech" class="py-24 md:py-40 bg-(--color-onyx) relative overflow-hidden">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 watermark-text select-none pointer-events-none font-anton opacity-[0.04]">
-    WORDPRESS
+  <!-- Subtle background glow matching the hero -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute -left-40 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-(--color-gold)/5 blur-[120px] rounded-full"></div>
   </div>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-    <div class="mb-16 md:mb-32 flex flex-col md:flex-row items-start md:items-baseline gap-6 md:gap-8">
-      <span class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.5em] block md:rotate-90 md:origin-left md:whitespace-nowrap">
-        // Tech Stack
-      </span>
-      <h2 class="font-anton text-5xl md:text-7xl lg:text-9xl uppercase leading-[0.8]">
-        WP<br /><span class="text-(--color-gold)">Mastery</span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+
+    <!-- Top Header Section -->
+    <div class="mb-12 md:mb-16">
+      <!-- Section label -->
+      <div class="inline-flex items-center gap-3 mb-6">
+        <span class="w-2 h-2 bg-(--color-gold) rounded-full"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] opacity-50">Por qué elegirnos</span>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="font-anton text-5xl md:text-7xl lg:text-8xl uppercase leading-[1]">
+        Webs que <span class="text-(--color-gold)">trabajan</span> por ti.
       </h2>
     </div>
 
-    <div class="flex flex-col border-t border-white/10" id="ledger-list">
-      {ledgerItems.map((item) => (
-        <div class="reveal-ledger ledger-row py-10 md:py-12 flex flex-col md:flex-row justify-between items-start md:items-end group cursor-default gap-6 md:gap-0">
-          <div class="md:mb-0">
-            <span class="text-(--color-gold) text-xs font-bold uppercase tracking-widest block mb-4">{item.label}</span>
-            <h3 class="text-3xl md:text-5xl font-anton uppercase group-hover:text-(--color-gold) transition-colors">
-              {item.title}
-            </h3>
-            <p class="text-sm opacity-50 mt-2 max-w-lg">{item.desc}</p>
-          </div>
-          <div class="text-left md:text-right">
-            <span class="text-4xl md:text-6xl font-anton leading-none">{item.metric}</span>
-            <p class="text-xs uppercase font-bold tracking-widest opacity-40 mt-3">{item.metricLabel}</p>
+    <!-- Two column layout: Left text, Right visual -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+      <!-- LEFT: Content -->
+      <div>
+        <!-- Ledger rows -->
+        <div class="flex flex-col border-t border-white/10" id="ledger-list">
+          {ledgerItems.map((item) => (
+            <div class="reveal-ledger ledger-row py-8 border-b border-white/10 flex flex-col gap-4 group cursor-default">
+              <div class="flex justify-between items-start gap-4">
+                <div class="flex-1">
+                  <span class="text-(--color-gold) text-[10px] font-bold uppercase tracking-[0.25em] block mb-2">{item.label}</span>
+                  <h3 class="text-xl md:text-2xl font-anton uppercase group-hover:text-(--color-gold) transition-colors leading-tight">
+                    {item.title}
+                  </h3>
+                </div>
+                <div class="text-right shrink-0">
+                  <div class="flex items-baseline justify-end">
+                    <span class="text-3xl md:text-4xl font-anton text-(--color-gold) leading-none tech-stat-number" data-target={item.metricValue}>0</span>
+                    <span class="text-3xl md:text-4xl font-anton text-(--color-gold) leading-none">{item.metricSuffix}</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm opacity-50 leading-relaxed max-w-lg">{item.desc}</p>
+              <p class="text-[10px] uppercase font-bold tracking-widest opacity-30">{item.metricLabel}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-10">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-3 border border-(--color-gold)/40 text-(--color-gold) font-bold uppercase tracking-widest text-xs px-6 py-3 hover:bg-(--color-gold) hover:text-black transition-all duration-300"
+          >
+            Hablemos de tu proyecto
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 14 0"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Visual -->
+      <div class="relative lg:sticky lg:top-32 h-[400px] lg:h-[600px] flex items-center justify-center">
+        <!-- Glow behind visual -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+          <div class="w-[80%] h-[60%] bg-(--color-gold)/8 blur-[80px] rounded-full"></div>
+        </div>
+
+        <!-- Visual image with mask blend -->
+        <div class="relative w-full h-full visual-mask">
+          <img
+            src="/services-visual.png"
+            alt="Rendimiento web"
+            class="w-full h-full object-cover object-center"
+            style="mix-blend-mode: lighten;"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Floating stat pill -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-4 z-10">
+          <div class="bg-(--color-jet)/90 backdrop-blur-md border border-white/10 px-5 py-3 flex items-center gap-3">
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span class="text-xs font-bold uppercase tracking-widest opacity-70">Tu web siempre en línea</span>
           </div>
         </div>
-      ))}
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  .visual-mask {
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
+  }
+
+  .ledger-row {
+    transition: background 0.3s ease;
+  }
+  .ledger-row:hover {
+    background: rgba(212, 175, 55, 0.02);
+  }
+</style>
+
+<script>
+  // Setup Number Counters for Tech Section
+  const techSection = document.getElementById('ledger-list');
+  const techNumbers = document.querySelectorAll('.tech-stat-number');
+  let techAnimated = false;
+
+  const animateTechNumbers = () => {
+    techNumbers.forEach((num) => {
+      const target = parseInt(num.getAttribute('data-target') || '0', 10);
+      const duration = 2000; // 2 seconds
+      const stepTime = Math.abs(Math.floor(duration / target));
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += 1;
+        num.textContent = current.toString();
+        if (current >= target) {
+          clearInterval(timer);
+          num.textContent = target.toString();
+        }
+      }, stepTime);
+    });
+  };
+
+  if (techSection) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !techAnimated) {
+        techAnimated = true;
+        animateTechNumbers();
+      }
+    }, { threshold: 0.2 });
+    
+    observer.observe(techSection);
+  }
+</script>

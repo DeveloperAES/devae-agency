@@ -109,7 +109,7 @@ const faqs = [
         class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-4"
         >// Inversión Inteligente</span
       >
-      <h2 class="font-anton text-5xl md:text-8xl uppercase leading-none">
+      <h2 class="font-anton text-5xl md:text-7xl lg:text-8xl uppercase leading-[1]">
         Planes & <span class="text-(--color-gold)">Precios</span>
       </h2>
       <p
@@ -238,7 +238,7 @@ const faqs = [
           class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-3"
           >// Resolviendo Dudas</span
         >
-        <h3 class="font-anton text-4xl md:text-6xl uppercase">
+        <h3 class="font-anton text-4xl md:text-5xl lg:text-6xl uppercase leading-[1]">
           Preguntas Frecuentes
         </h3>
       </div>
@@ -247,8 +247,8 @@ const faqs = [
         {
           faqs.map((faq) => (
             <details class="faq-details bg-(--color-jet) brutalist-border p-6 md:p-8 group cursor-pointer transition-all duration-300">
-              <summary class="flex justify-between items-center list-none font-anton text-lg md:text-xl uppercase select-none">
-                <span class="pr-6">{faq.question}</span>
+              <summary class="flex justify-between items-center list-none select-none">
+                <span class="pr-6 text-base md:text-lg font-semibold leading-snug">{faq.question}</span>
                 <div class="shrink-0 text-(--color-gold)">
                   <span class="plus-icon block group-open:hidden">
                     <Icon name="Plus" class="w-6 h-6" />
@@ -266,16 +266,16 @@ const faqs = [
         }
       </div>
 
-      <div class="text-center mt-12 md:mt-16 reveal-pricing">
-        <p class="text-sm opacity-50 uppercase tracking-widest">
+      <div class="text-center mt-16 md:mt-20 reveal-pricing flex flex-col items-center">
+        <p class="text-sm opacity-50 uppercase tracking-widest mb-6">
           ¿Tienes un proyecto especial o dudas adicionales?
         </p>
         <a
           href="#contact"
-          class="inline-flex items-center gap-2 text-(--color-gold) font-anton text-lg uppercase mt-2 hover:text-white transition-colors"
+          class="inline-flex items-center gap-3 border border-(--color-gold)/40 text-(--color-gold) font-bold uppercase tracking-widest text-xs px-8 py-4 hover:bg-(--color-gold) hover:text-black transition-all duration-300"
         >
           Contáctame Directamente
-          <Icon name="ArrowRight" class="text-xl" />
+          <Icon name="ArrowRight" class="text-base transition-transform group-hover:translate-x-1" />
         </a>
       </div>
     </div>

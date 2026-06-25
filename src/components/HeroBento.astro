@@ -1,96 +1,286 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 ---
 
-<section id="dashboard-bento" class="min-h-screen pt-24 pb-10 px-4 sm:px-6 flex flex-col justify-center">
-  <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-6 gap-3 lg:gap-4 min-h-[85vh] lg:h-[85vh]">
-    <!-- Main headline tile -->
-    <div class="reveal-hero col-span-1 lg:col-span-8 lg:row-span-4 bg-(--color-jet) p-5 sm:p-7 lg:p-12 brutalist-border flex flex-col justify-between relative overflow-hidden group">
-      <div class="absolute -top-24 -right-24 w-64 h-64 bg-(--color-gold)/5 blur-3xl rounded-full"></div>
-      <div class="relative z-10 flex flex-col lg:flex-row justify-between items-start gap-4 lg:gap-6">
-        <h1 class="font-anton text-[clamp(2.5rem,8vw,7.5rem)] uppercase leading-[1.1] lg:leading-[0.85] tracking-tighter" id="hero-headline">
-          WordPress &<br />Desarrollo Web<span class="cursor"></span>
-        </h1>
-        <Icon name="Code2" class="text-5xl lg:text-7xl text-(--color-gold) drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]" />
+<section
+  id="dashboard-bento"
+  class="relative min-h-screen pt-20 pb-0 px-4 sm:px-6 lg:px-12 flex flex-col justify-center overflow-hidden"
+>
+  <!-- Diffused global glow -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30"
+  >
+    <div
+      class="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-(--color-gold) blur-[120px] rounded-full transform translate-x-1/4"
+    >
+    </div>
+  </div>
+
+  <!-- Main two-column hero -->
+  <div
+    class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center min-h-[90vh]"
+  >
+    <!-- LEFT: Text content -->
+    <div class="reveal-hero flex flex-col gap-8 lg:pr-12 pt-8 lg:pt-0">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-3 self-start">
+        <span class="w-2 h-2 bg-(--color-gold) rounded-full animate-pulse"
+        ></span>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] opacity-50"
+          >Disponible para nuevos proyectos</span
+        >
       </div>
-      <div class="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4 lg:gap-6 mt-6 lg:mt-0">
-        <p class="text-base lg:text-xl max-w-lg opacity-60 leading-relaxed font-light">
-          Diseño y desarrollo de landing pages de alta conversión, tiendas online, sitios corporativos y plugins o integraciones a medida.
-        </p>
-        <div class="text-xs uppercase tracking-widest opacity-40 font-bold border-t border-white/10 pt-3 lg:pt-4">
-          [ WordPress & Custom Specialist ] / DevAE
+
+      <!-- Headline -->
+      <h1
+        class="font-anton text-[clamp(3rem,8vw,6.5rem)] uppercase leading-[0.9] tracking-tighter"
+        id="hero-headline"
+      >
+        Tu negocio,<br />
+        <span class="text-(--color-gold)">online</span><br />
+        y vendiendo.
+      </h1>
+
+      <!-- Subtitle -->
+      <p
+        class="text-lg lg:text-xl opacity-60 leading-relaxed max-w-md font-light"
+      >
+        Creamos tu página web para que atraiga clientes, genere ventas y trabaje
+        por ti — sin que tengas que entender nada de tecnología.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="#contact"
+          id="hero-cta-primary"
+          class="inline-flex items-center justify-center gap-3 bg-(--color-gold) text-black font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 hover:bg-white group"
+        >
+          Quiero mi web ahora
+          <Icon
+            name="ArrowRight"
+            class="text-base transition-transform group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          href="#portfolio"
+          id="hero-cta-secondary"
+          class="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 hover:border-(--color-gold) hover:text-(--color-gold)"
+        >
+          Ver proyectos
+        </a>
+      </div>
+
+      <!-- Social proof bar -->
+      <div
+        class="flex items-center gap-8 pt-4 border-t border-white/10"
+        id="stats-container"
+      >
+        <div class="flex flex-col">
+          <div class="flex items-baseline">
+            <span
+              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
+              data-target="99">0</span
+            >
+            <span class="font-anton text-3xl text-(--color-gold) leading-none"
+              >%</span
+            >
+          </div>
+          <span
+            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
+            >Velocidad en Google</span
+          >
+        </div>
+        <div class="w-px h-10 bg-white/10"></div>
+        <div class="flex flex-col">
+          <div class="flex items-baseline">
+            <span class="font-anton text-3xl text-(--color-gold) leading-none"
+              >+</span
+            >
+            <span
+              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
+              data-target="20">0</span
+            >
+          </div>
+          <span
+            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
+            >Proyectos entregados</span
+          >
+        </div>
+        <div class="w-px h-10 bg-white/10"></div>
+        <div class="flex flex-col">
+          <div class="flex items-baseline">
+            <span
+              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
+              data-target="24">0</span
+            >
+            <span class="font-anton text-3xl text-(--color-gold) leading-none"
+              >h</span
+            >
+          </div>
+          <span
+            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
+            >Tiempo de respuesta</span
+          >
         </div>
       </div>
     </div>
 
-    <!-- Plugins & APIs tile -->
-    <div class="reveal-hero col-span-1 lg:col-span-4 lg:row-span-2 bg-(--color-jet) brutalist-border flex flex-col justify-between p-5 sm:p-6 lg:p-8 overflow-hidden relative group min-h-[180px] lg:min-h-[200px]">
-      <div class="absolute inset-0 bg-gradient-to-br from-(--color-gold)/5 to-transparent"></div>
-      <div class="relative z-10 flex justify-between items-start">
-        <Icon name="Puzzle" class="text-3xl lg:text-4xl text-(--color-gold) transition-transform duration-500 group-hover:rotate-12" />
-        <span class="text-[10px] font-bold uppercase tracking-widest opacity-30">WordPress Core</span>
+    <!-- RIGHT: Visual / mockup carousel -->
+    <div
+      class="reveal-hero relative flex items-center justify-center lg:justify-end h-[50vw] lg:h-full min-h-[320px] lg:min-h-0 perspective-[1000px]"
+    >
+      <!-- Image Carousel Container -->
+      <div
+        class="relative w-full max-w-xl lg:max-w-none lg:w-[120%] lg:-mr-20 h-full flex items-center justify-center image-mask"
+      >
+        <img
+          src="/hero-devices.png"
+          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-100"
+        />
+        <img
+          src="/hero-carousel-1.png"
+          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-0"
+        />
+        <img
+          src="/hero-carousel-2.png"
+          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-0"
+        />
       </div>
-      <div class="relative z-10 mt-3 lg:mt-4">
-        <h4 class="font-anton text-xl lg:text-2xl uppercase leading-none group-hover:text-(--color-gold) transition-colors">Plugins & APIs</h4>
-        <p class="text-xs opacity-50 mt-2 leading-relaxed">
-          Desarrollo de plugins a medida, complementos exclusivos y conexiones de sistemas externos.
-        </p>
-      </div>
-    </div>
 
-    <!-- Performance & SEO tile -->
-    <div class="reveal-hero col-span-1 lg:col-span-4 lg:row-span-2 bg-(--color-jet) brutalist-border p-5 sm:p-6 lg:p-8 flex flex-col justify-between relative overflow-hidden min-h-[180px] lg:min-h-[200px] group">
-      <div class="absolute top-0 left-0 w-full h-1 bg-(--color-gold)/20"></div>
-      <div class="relative z-10 flex justify-between items-start">
-        <Icon name="Gauge" class="text-3xl lg:text-4xl text-(--color-gold) transition-transform duration-500 group-hover:scale-110" />
-        <span class="text-[10px] font-bold uppercase tracking-widest opacity-30">Rendimiento</span>
-      </div>
-      <div class="relative z-10">
-        <div class="flex items-baseline gap-1">
-          <span class="text-5xl lg:text-6xl font-anton text-(--color-gold) leading-none" id="latency-counter">99</span>
-          <span class="text-2xl font-anton text-(--color-gold) leading-none">%</span>
-        </div>
-        <span class="text-xs uppercase tracking-widest mt-2 block opacity-50 font-bold">Lighthouse Score & SEO</span>
-      </div>
-    </div>
-
-    <!-- CTA tile -->
-    <a href="#contact" class="reveal-hero col-span-1 lg:col-span-4 lg:row-span-2 bg-(--color-gold) text-black p-5 sm:p-7 lg:p-10 flex flex-col justify-between group min-h-[180px] lg:min-h-[200px] transition-transform duration-300 hover:scale-[1.01]">
-      <div class="flex justify-between items-start">
-        <h3 class="font-anton text-3xl lg:text-4xl uppercase leading-none">Inicia tu<br />proyecto</h3>
-        <Icon name="ArrowUpRight" class="text-4xl lg:text-5xl" />
-      </div>
-      <div class="flex items-center gap-3 lg:gap-4 text-xs font-bold uppercase tracking-widest border-t border-black/10 pt-5 lg:pt-6">
-        <span class="w-2 h-2 bg-black rounded-full animate-ping"></span>
-        Disponibilidad inmediata
-      </div>
-    </a>
-
-    <!-- Niche services row -->
-    <div class="reveal-hero col-span-1 lg:col-span-8 lg:row-span-2 brutalist-border flex flex-col md:flex-row items-stretch px-5 sm:px-6 lg:px-8 py-5 sm:py-6 lg:py-8 gap-5 lg:gap-8 relative bg-(--color-jet)">
-      <div class="flex-1 flex flex-col justify-between gap-2">
+      <!-- Floating badge -->
+      <div
+        class="absolute top-4 right-4 lg:top-8 lg:right-0 z-20 bg-(--color-jet)/80 backdrop-blur-md border border-white/10 px-5 py-3 flex items-center gap-3 rounded-sm shadow-xl"
+      >
+        <Icon name="Star" class="text-(--color-gold) text-lg animate-pulse" />
         <div>
-          <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">01 / CMS</span>
-          <span class="font-anton text-lg lg:text-xl uppercase block mt-1">WordPress & WooCommerce</span>
+          <div class="font-anton text-lg leading-none text-white">
+            +3 proyectos
+          </div>
+          <div
+            class="text-[10px] uppercase tracking-widest text-white/50 mt-0.5"
+          >
+            En el portafolio
+          </div>
         </div>
-        <p class="text-xs opacity-50 leading-relaxed">Sitios autogestionables, tiendas online y plantillas desde cero sin maquetadores pesados.</p>
-      </div>
-      <div class="hidden md:block w-px bg-white/10 self-stretch"></div>
-      <div class="flex-1 flex flex-col justify-between gap-2">
-        <div>
-          <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">02 / Growth</span>
-          <span class="font-anton text-lg lg:text-xl uppercase block mt-1">Landings & Webs Corporativas</span>
-        </div>
-        <p class="text-xs opacity-50 leading-relaxed">Diseños de conversión optimizados para campañas y portales web rápidos para tu marca.</p>
-      </div>
-      <div class="hidden md:block w-px bg-white/10 self-stretch"></div>
-      <div class="flex-1 flex flex-col justify-between gap-2">
-        <div>
-          <span class="text-xs uppercase text-(--color-gold)/60 font-bold tracking-[0.2em]">03 / Custom</span>
-          <span class="font-anton text-lg lg:text-xl uppercase block mt-1">Sistemas & APIs a Medida</span>
-        </div>
-        <p class="text-xs opacity-50 leading-relaxed">Desarrollo a medida con tecnologías modernas para proyectos que requieren lógica compleja.</p>
       </div>
     </div>
   </div>
+
+  <!-- Bottom scrolling services strip -->
+  <!-- <div class="relative z-10 w-full border-t border-white/5 mt-auto py-5 overflow-hidden bg-transparent">
+    <div class="flex items-center gap-12 animate-marquee whitespace-nowrap opacity-30 text-xs font-bold uppercase tracking-[0.3em]">
+      <span>Landing Pages</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Tiendas Online</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Sitios Corporativos</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Integraciones</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>WordPress</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>WooCommerce</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Landing Pages</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Tiendas Online</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Sitios Corporativos</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>Integraciones</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>WordPress</span>
+      <span class="text-(--color-gold)">·</span>
+      <span>WooCommerce</span>
+      <span class="text-(--color-gold)">·</span>
+    </div>
+  </div> -->
 </section>
+
+<style>
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  /* Blends the square edges of the images smoothly into the background */
+  .image-mask {
+    -webkit-mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 1) 35%,
+      rgba(0, 0, 0, 0) 65%
+    );
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 1) 35%,
+      rgba(0, 0, 0, 0) 65%
+    );
+  }
+
+  .hero-carousel-img {
+    mix-blend-mode: lighten;
+  }
+</style>
+
+<script>
+  // Setup Carousel
+  const images = document.querySelectorAll(".hero-carousel-img");
+  let currentImage = 0;
+
+  if (images.length > 1) {
+    setInterval(() => {
+      images[currentImage].classList.remove("opacity-100");
+      images[currentImage].classList.add("opacity-0");
+
+      currentImage = (currentImage + 1) % images.length;
+
+      images[currentImage].classList.remove("opacity-0");
+      images[currentImage].classList.add("opacity-100");
+    }, 4000); // Change image every 4 seconds
+  }
+
+  // Setup Number Counters
+  const statsSection = document.getElementById("stats-container");
+  const numbers = document.querySelectorAll(".stat-number");
+  let animated = false;
+
+  const animateNumbers = () => {
+    numbers.forEach((num) => {
+      const target = parseInt(num.getAttribute("data-target") || "0", 10);
+      const duration = 2000; // 2 seconds
+      const stepTime = Math.abs(Math.floor(duration / target));
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += 1;
+        num.textContent = current.toString();
+        if (current >= target) {
+          clearInterval(timer);
+          num.textContent = target.toString();
+        }
+      }, stepTime);
+    });
+  };
+
+  if (statsSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !animated) {
+          animated = true;
+          animateNumbers();
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(statsSection);
+  }
+</script>
