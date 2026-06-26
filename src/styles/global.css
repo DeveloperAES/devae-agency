@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme inline {
+  /* ── Proyect: Onyx / Gold palette ─────────────────────── */
   --color-onyx: #111111;
   --color-jet: #2A3439;
   --color-gold: #D4AF37;
@@ -12,6 +13,30 @@
   --color-gold-60: rgba(212, 175, 55, 0.6);
   --font-anton: 'Anton', sans-serif;
   --font-space: 'Space Grotesk', sans-serif;
+
+  /* ── Agency: HSL design tokens ────────────────────────── */
+  --color-background: hsl(240 10% 3.9%);
+  --color-foreground: hsl(0 0% 98%);
+  --color-card: hsl(240 10% 5.9%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-primary: hsl(0 0% 98%);
+  --color-primary-foreground: hsl(240 5.9% 10%);
+  --color-secondary: hsl(240 3.7% 15.9%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  --color-muted: hsl(240 3.7% 15.9%);
+  --color-muted-foreground: hsl(240 5% 64.9%);
+  --color-accent: hsl(240 3.7% 15.9%);
+  --color-accent-foreground: hsl(0 0% 98%);
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(240 3.7% 15.9%);
+  --color-input: hsl(240 3.7% 15.9%);
+  --color-ring: hsl(240 4.9% 83.9%);
+  --color-sidebar: hsl(240 10% 5.9%);
+  --color-sidebar-foreground: hsl(240 5% 64.9%);
+  --color-sidebar-muted: hsl(240 3.7% 15.9%);
+  --color-sidebar-active: hsl(240 3.7% 15.9%);
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -26,6 +51,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
+    /* Agency: subtle mesh gradient depth layer */
+    background-image:
+      radial-gradient(at 0% 0%,   hsla(253, 16%, 7%, 1)    0, transparent 50%),
+      radial-gradient(at 50% 0%,  hsla(225, 39%, 30%, 0.08) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(45,  80%, 20%, 0.06) 0, transparent 50%);
+    background-attachment: fixed;
   }
 
   /* Hide default cursor on desktop screens */
@@ -147,6 +178,40 @@
     letter-spacing: -0.05em;
     color: rgba(255, 255, 255, 0.02);
     user-select: none;
+  }
+
+  /* ── Agency: Glassmorphism utilities ───────────────────── */
+  .glass {
+    background-color: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .glass-card {
+    background-color: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    box-shadow:
+      0 10px 40px -10px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(212, 175, 55, 0.06);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+      0 20px 40px -10px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(212, 175, 55, 0.05),
+      inset 0 1px 0 rgba(212, 175, 55, 0.12);
+  }
+
+  .antigravity-shadow {
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
