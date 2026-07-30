@@ -44,27 +44,51 @@ import CustomCursor from "../components/CustomCursor.astro";
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // Hero reveals
-      gsap.fromTo(".reveal-hero", 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", delay: 0.1 }
-      );
+      const isMobile = window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches;
 
-      // Fail-safe ScrollTrigger batch for services, portfolio, pricing and bento cards
-      ScrollTrigger.batch(".reveal-service, .portfolio-item, .bento-card", {
-        start: "top 90%",
-        onEnter: (batch) => {
-          gsap.fromTo(batch,
-            { opacity: 0, y: 25 },
-            { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", overwrite: "auto" }
-          );
-        },
-        once: true
-      });
+      if (!isMobile) {
+        // Desktop smooth reveals
+        gsap.fromTo(".reveal-hero", 
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", delay: 0.1 }
+        );
 
-      // Refresh ScrollTrigger after images load
-      window.addEventListener("load", () => {
+        ScrollTrigger.batch(".reveal-service, .portfolio-item, .bento-card", {
+          start: "top 90%",
+          onEnter: (batch) => {
+            gsap.fromTo(batch,
+              { opacity: 0, y: 25 },
+              { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", overwrite: "auto" }
+            );
+          },
+          once: true
+        });
+      } else {
+        // Mobile phones: ensure 100% instant visibility without opacity delays
+        gsap.set(".reveal-hero, .reveal-service, .portfolio-item, .bento-card", {
+          opacity: 1,
+          y: 0,
+          clearProps: "all"
+        });
+      }
+
+      // Fail-safe handler for tab switching, refresh and scroll-to-top
+      const ensureVisibility = () => {
+        gsap.to(".reveal-hero, .reveal-service, .portfolio-item, .bento-card", {
+          opacity: 1,
+          y: 0,
+          duration: 0.2,
+          overwrite: "auto"
+        });
         ScrollTrigger.refresh();
+      };
+
+      window.addEventListener("load", ensureVisibility);
+      window.addEventListener("pageshow", ensureVisibility);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          ensureVisibility();
+        }
       });
     </script>
   </body>
