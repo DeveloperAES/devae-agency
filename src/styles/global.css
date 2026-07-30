@@ -57,6 +57,15 @@
     }
   }
 
+  /* Fail-safe visibility for all section cards and components */
+  .reveal-hero,
+  .reveal-service,
+  .portfolio-item,
+  .bento-card {
+    opacity: 1;
+    visibility: visible;
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
