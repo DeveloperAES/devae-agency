@@ -8,16 +8,7 @@ import CatMascot from "./CatMascot.astro";
   id="dashboard-bento"
   class="relative min-h-[92vh] pt-36 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-12 flex flex-col justify-center overflow-hidden"
 >
-  <!-- Background Glow Orbs -->
-  <div
-    class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10 pulse-glow"
-  >
-  </div>
-  <div
-    class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none -z-10 pulse-glow"
-    style="animation-delay: 2s;"
-  >
-  </div>
+
 
   <div
     class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
@@ -29,9 +20,9 @@ import CatMascot from "./CatMascot.astro";
         <CatMascot size={28} />
         <OwlMascot size={28} />
         <div
-          class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-cyan-300 w-fit backdrop-blur-md"
+          class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-cyan-300 w-fit"
         >
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
           <span>Estudio de Desarrollo Web & Estrategia Digital</span>
         </div>
       </div>
@@ -69,67 +60,6 @@ import CatMascot from "./CatMascot.astro";
           <span>Ver Proyectos Realizados</span>
         </a>
       </div>
-
-      <!-- Outbound Social Proof Metrics Bar -->
-      <div
-        id="stats-container"
-        class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 mt-4 border-t border-white/10 max-w-xl"
-      >
-        <div class="flex flex-col">
-          <div class="flex items-baseline gap-0.5">
-            <span
-              class="font-space text-2xl sm:text-3xl font-bold text-cyan-400 stat-number"
-              data-target="100">100</span
-            >
-            <span
-              class="font-space text-base sm:text-xl font-bold text-cyan-400"
-              >/100</span
-            >
-          </div>
-          <span
-            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
-            >Velocidad Google</span
-          >
-        </div>
-
-        <div class="flex flex-col border-l border-white/10 pl-3 sm:pl-6">
-          <div class="flex items-baseline gap-0.5">
-            <span
-              class="font-space text-2xl sm:text-3xl font-bold text-amber-400"
-              >+</span
-            >
-            <span
-              class="font-space text-2xl sm:text-3xl font-bold text-amber-400 stat-number"
-              data-target="140">140</span
-            >
-            <span
-              class="font-space text-base sm:text-xl font-bold text-amber-400"
-              >%</span
-            >
-          </div>
-          <span
-            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
-            >Más Conversión</span
-          >
-        </div>
-
-        <div class="flex flex-col border-l border-white/10 pl-3 sm:pl-6">
-          <div class="flex items-baseline gap-0.5">
-            <span
-              class="font-space text-2xl sm:text-3xl font-bold text-purple-400"
-              >100</span
-            >
-            <span
-              class="font-space text-base sm:text-xl font-bold text-purple-400"
-              >%</span
-            >
-          </div>
-          <span
-            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
-            >Autogestionable</span
-          >
-        </div>
-      </div>
     </div>
 
     <!-- RIGHT COLUMN: Interactive Project Showcase Carousel (5 cols) -->
@@ -166,7 +96,7 @@ import CatMascot from "./CatMascot.astro";
         >
           <!-- Slide 1: Ysique Store -->
           <div
-            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100"
+            class="carousel-slide absolute inset-0 opacity-100"
             data-index="0"
           >
             <img
@@ -206,7 +136,7 @@ import CatMascot from "./CatMascot.astro";
 
           <!-- Slide 2: OIG Perú -->
           <div
-            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none"
+            class="carousel-slide absolute inset-0 opacity-0 pointer-events-none"
             data-index="1"
           >
             <img
@@ -246,7 +176,7 @@ import CatMascot from "./CatMascot.astro";
 
           <!-- Slide 3: Olva Platform -->
           <div
-            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none"
+            class="carousel-slide absolute inset-0 opacity-0 pointer-events-none"
             data-index="2"
           >
             <img
@@ -324,44 +254,6 @@ import CatMascot from "./CatMascot.astro";
 </section>
 
 <script>
-  // Setup Number Counters
-  const statsSection = document.getElementById("stats-container");
-  const numbers = document.querySelectorAll(".stat-number");
-  let animated = false;
-
-  const animateNumbers = () => {
-    numbers.forEach((num) => {
-      const target = parseInt(num.getAttribute("data-target") || "0", 10);
-      const duration = 1800;
-      const stepTime = Math.max(10, Math.floor(duration / target));
-      let current = 0;
-
-      const timer = setInterval(() => {
-        current += Math.ceil(target / 40);
-        if (current >= target) {
-          clearInterval(timer);
-          num.textContent = target.toString();
-        } else {
-          num.textContent = current.toString();
-        }
-      }, stepTime);
-    });
-  };
-
-  if (statsSection) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !animated) {
-          animated = true;
-          animateNumbers();
-        }
-      },
-      { threshold: 0.3 },
-    );
-
-    observer.observe(statsSection);
-  }
-
   // Hero Project Carousel Logic
   const slides = document.querySelectorAll(".carousel-slide");
   const dots = document.querySelectorAll(".dot-indicator");
