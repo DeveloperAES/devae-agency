@@ -89,6 +89,20 @@
       padding-top: 3.5rem;
       padding-bottom: 3.5rem;
     }
+
+    /* CRITICAL: Disable all backdrop-filter/blur on mobile to prevent iOS Safari GPU black screen bug.
+       backdrop-filter creates independent compositing layers that iOS WebKit fails to repaint
+       on scroll, tab switch, or overscroll-bounce, resulting in a completely black screen.
+       All affected elements get solid opaque backgrounds instead. */
+    [class*="backdrop-blur"] {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* Mobile menu overlay needs opaque background since backdrop-blur is disabled */
+    #mobile-menu {
+      background-color: #0a0b0e !important;
+    }
   }
 }
 
@@ -127,7 +141,7 @@
 
   /* Glassmorphism & Bento Cards */
   .bento-card {
-    background: rgba(18, 20, 29, 0.85);
+    background: rgba(18, 20, 29, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -135,6 +149,10 @@
     position: relative;
     overflow: hidden;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    /* GPU acceleration to prevent iOS Safari black compositing layers */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
   }
 
   .bento-card::before {
@@ -151,7 +169,7 @@
   }
 
   .bento-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     border-color: rgba(0, 242, 254, 0.25);
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 242, 254, 0.08);
   }
@@ -166,6 +184,21 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* iOS Safari: disable backdrop-filter on mobile to prevent black screen compositing bug */
+  @media (max-width: 767px) {
+    .bento-card {
+      background: rgb(16, 18, 28) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .glass-pill {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+    }
   }
 }
 
