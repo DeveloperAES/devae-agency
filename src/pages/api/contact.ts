@@ -39,15 +39,64 @@ export const POST: APIRoute = async ({ request }) => {
       to: [CONTACT_EMAIL],
       reply_to: email,
       subject: `Nuevo mensaje de ${name} - ${project}`,
-      html: [
-        '<h2>Nuevo mensaje desde el sitio web</h2>',
-        `<p><strong>Nombre:</strong> ${name}</p>`,
-        `<p><strong>Email:</strong> ${email}</p>`,
-        `<p><strong>Proyecto:</strong> ${project}</p>`,
-        `<p><strong>Presupuesto:</strong> ${budget || 'No especificado'}</p>`,
-        '<p><strong>Mensaje:</strong></p>',
-        `<p>${message.replace(/\n/g, '<br>')}</p>`,
-      ].join(''),
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0b0e; color: #f8fafc; margin: 0; padding: 20px; }
+            .card { max-width: 600px; margin: 0 auto; background-color: #12141f; border: 1px solid #1e2235; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+            .header { border-bottom: 1px solid #2a2f45; padding-bottom: 20px; margin-bottom: 24px; }
+            .brand { font-size: 20px; font-weight: bold; color: #ffffff; }
+            .accent { color: #00f2fe; }
+            .badge { display: inline-block; padding: 4px 12px; background: rgba(0,242,254,0.1); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; border-radius: 20px; font-size: 11px; font-family: monospace; }
+            .field { margin-bottom: 16px; }
+            .label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-family: monospace; display: block; margin-bottom: 4px; }
+            .value { font-size: 15px; color: #f1f5f9; font-weight: 500; }
+            .message-box { background: rgba(255,255,255,0.03); border: 1px solid #2a2f45; border-radius: 12px; padding: 16px; margin-top: 20px; color: #e2e8f0; line-height: 1.6; }
+            .footer { margin-top: 32px; pt-20px; border-top: 1px solid #1e2235; font-size: 12px; color: #64748b; text-align: center; }
+          </style>
+        </head>
+        <body>
+          <div class="card">
+            <div class="header">
+              <span class="badge">NUEVA SOLICITUD DE COTIZACIÓN</span>
+              <div class="brand" style="margin-top: 12px;">Dev<span class="accent">AE</span> Studio</div>
+            </div>
+
+            <div class="field">
+              <span class="label">Cliente / Empresa</span>
+              <div class="value">${name}</div>
+            </div>
+
+            <div class="field">
+              <span class="label">Correo Electrónico</span>
+              <div class="value"><a href="mailto:${email}" style="color: #00f2fe; text-decoration: none;">${email}</a></div>
+            </div>
+
+            <div class="field">
+              <span class="label">Tipo de Proyecto</span>
+              <div class="value">${project}</div>
+            </div>
+
+            <div class="field">
+              <span class="label">Presupuesto Estimado</span>
+              <div class="value">${budget || 'No especificado'}</div>
+            </div>
+
+            <span class="label">Detalles del Mensaje</span>
+            <div class="message-box">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
+
+            <div class="footer">
+              DevAE Studio · Notificación Automática de Cotización Web
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
     };
 
     let response = await fetch('https://api.resend.com/emails', {
