@@ -4,165 +4,171 @@ import Icon from "./Icon.astro";
 const projects = [
   {
     id: 1,
-    title: "Ysique",
+    title: "Ysique Store",
+    client: "E-Commerce de Moda & Retail",
     category: "E-commerce",
-    tags: "E-commerce / Tienda Virtual",
+    tags: ["Tienda Online", "Pagos con Tarjeta", "+140% Ventas Directas"],
     image: "/projects/ysique.png",
-    label: "Ysique\nStore",
     wide: true,
-    aspect: "aspect-[21/9]",
+    aspect: "aspect-[16/9]",
     link: "https://ysique.com/",
+    status: "EN VIVO",
+    impact: "Optimizó la velocidad de carga e incrementó las ventas en línea."
   },
   {
     id: 2,
     title: "OIG Perú",
+    client: "Portal Corporativo & Institucional",
     category: "Corporativo",
-    tags: "Institucional / Corporativo",
+    tags: ["Sitio Corporativo", "Diseño Exclusivo", "Posicionado en Google"],
     image: "/projects/oigperu.png",
-    label: "OIG\nPerú",
     wide: false,
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-[4/3]",
     link: "https://oigperu.com.pe/",
+    status: "EN VIVO",
+    impact: "Posicionamiento institucional y generación constante de contactos."
   },
   {
     id: 3,
-    title: "Olva",
+    title: "Olva Tracking Platform",
+    client: "Sistema Logístico & Control de Envíos",
     category: "Sistema",
-    tags: "WordPress Custom / API Integration / CRM",
+    tags: ["Sistema de Envíos", "Rastreo en Tiempo Real", "Portal de Clientes"],
     image: "/projects/andersonv9.png",
-    label: "Olva",
     wide: false,
-    aspect: "aspect-square",
+    aspect: "aspect-[4/3]",
     link: "https://andersonv9.sg-host.com/",
+    status: "EN VIVO",
+    impact: "Automatizó las consultas de envíos y rastreo de paquetes."
   },
   {
     id: 4,
-    title: "Desarrollo a Medida",
-    category: "Plugin",
-    tags: "Aplicación Web / Integración",
+    title: "BioPharma Latam Portal",
+    client: "Plataforma B2B & Catálogo Médico",
+    category: "En Desarrollo",
+    tags: ["Portal B2B", "Lanzamiento Próximo", "En Desarrollo 85%"],
     image: "/projects/plugin.png",
-    label: "Desarrollo\nCustom",
     wide: true,
-    aspect: "aspect-[16/7]",
+    aspect: "aspect-[16/9]",
     link: "#",
-  },
-  {
-    id: 5,
-    title: "Olva Box",
-    category: "Sistema",
-    tags: "En Desarrollo / Sistema",
-    image: "/projects/olva-box.png",
-    label: "Olva\nBox\n(WIP)",
-    wide: false,
-    aspect: "aspect-[4/5]",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Olva Tracking",
-    category: "Sistema",
-    tags: "En Desarrollo / API REST",
-    image: "/projects/olva-tracking.png",
-    label: "Olva\nTracking\n(WIP)",
-    wide: true,
-    aspect: "aspect-[21/9]",
-    link: "#",
+    status: "PRÓXIMAMENTE",
+    impact: "Actualmente en fase final de integración y pruebas de seguridad."
   },
 ];
 ---
 
-<section id="portfolio" class="py-20 md:py-40 bg-(--color-onyx) px-4 sm:px-6">
+<section id="portfolio" class="py-24 lg:py-32 px-4 sm:px-6 relative">
   <div class="max-w-7xl mx-auto">
-    <div
-      class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-24 gap-6 lg:gap-8"
-    >
-      <div class="reveal-portfolio">
-        <span
-          class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-4"
-          >Portafolio Seleccionado</span
-        >
-        <h2
-          class="font-anton text-4xl sm:text-6xl md:text-8xl lg:text-9xl uppercase leading-[1.1] lg:leading-[0.8]"
-        >
-          Proyectos<br />Realizados
+    
+    <!-- Section Header & Filter Buttons -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+      <div class="flex flex-col gap-3 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 w-fit">
+          <span>// CASOS DE ÉXITO & PRÓXIMOS LANZAMIENTOS</span>
+        </div>
+        <h2 class="font-space text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          Proyectos desarrollados para <span class="gradient-text-cyan">generar resultados</span>.
         </h2>
       </div>
-      <div class="reveal-portfolio flex flex-wrap gap-2" id="portfolio-filters">
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 font-mono text-xs" id="portfolio-filters">
         <button
           data-filter="all"
-          class="filter-btn px-5 md:px-8 py-2 border-2 border-(--color-gold) text-(--color-gold) text-xs uppercase font-black transition-all"
+          class="filter-btn px-4 py-2 rounded-full border border-cyan-500 bg-cyan-500/10 text-cyan-300 font-semibold transition-all"
         >
           Todos
         </button>
         <button
           data-filter="E-commerce"
-          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+          class="filter-btn px-4 py-2 rounded-full border border-white/15 text-slate-300 hover:border-cyan-500/50 hover:text-white transition-all"
         >
-          E-commerce
+          E-Commerce
         </button>
         <button
           data-filter="Sistema"
-          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+          class="filter-btn px-4 py-2 rounded-full border border-white/15 text-slate-300 hover:border-cyan-500/50 hover:text-white transition-all"
         >
-          Sistemas
+          Sistemas & APIs
         </button>
         <button
           data-filter="Corporativo"
-          class="filter-btn px-5 md:px-8 py-2 border-2 border-white/10 text-white/40 text-xs uppercase font-black hover:border-(--color-gold) hover:text-(--color-gold) transition-all"
+          class="filter-btn px-4 py-2 rounded-full border border-white/15 text-slate-300 hover:border-cyan-500/50 hover:text-white transition-all"
         >
           Corporativo
+        </button>
+        <button
+          data-filter="En Desarrollo"
+          class="filter-btn px-4 py-2 rounded-full border border-purple-500/40 text-purple-300 hover:border-purple-400 hover:text-white transition-all bg-purple-500/10"
+        >
+          ● En Desarrollo
         </button>
       </div>
     </div>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8"
-      id="portfolio-grid"
-    >
-      {
-        projects.map((p) => (
-          <a
-            href={p.link}
-            target={p.link !== "#" ? "_blank" : "_self"}
-            rel={p.link !== "#" ? "noopener noreferrer" : ""}
-            class={`reveal-portfolio portfolio-item group block ${p.wide ? "col-span-1 md:col-span-2 lg:col-span-8" : "col-span-1 lg:col-span-4"}`}
-            data-category={p.category}
-            style="cursor:pointer"
-          >
-            <div
-              class={`${p.aspect} bg-(--color-jet) brutalist-border overflow-hidden relative`}
-            >
-              <img
-                src={p.image}
-                alt={p.title}
-                class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-110 group-hover:scale-105 transition-all duration-700"
-                decoding="async"
-                loading="lazy"
-              />
-              <div class="hidden lg:block absolute inset-0 border-4 border-(--color-gold)/0 group-hover:border-(--color-gold)/50 transition-all duration-700 z-20 pointer-events-none" />
+    <!-- Portfolio Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8" id="portfolio-grid">
+      {projects.map((p) => (
+        <a
+          href={p.link}
+          target={p.link !== "#" ? "_blank" : "_self"}
+          rel={p.link !== "#" ? "noopener noreferrer" : ""}
+          class={`portfolio-item group block bento-card p-4 sm:p-6 transition-all duration-500 ${
+            p.wide ? "lg:col-span-8" : "lg:col-span-4"
+          }`}
+          data-category={p.category}
+        >
+          <!-- Image Container with Hover Zoom -->
+          <div class={`relative ${p.aspect} rounded-xl overflow-hidden bg-black/60 border border-white/10 mb-5`}>
+            <img
+              src={p.image}
+              alt={p.title}
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-95 group-hover:brightness-100"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class={`text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full backdrop-blur-md border ${
+                p.status === 'PRÓXIMAMENTE' 
+                  ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' 
+                  : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+              }`}>
+                ● {p.status}
+              </span>
             </div>
-            <div class="mt-4 lg:mt-8 flex flex-col lg:flex-row justify-between items-start gap-3 lg:gap-4">
-              <div>
-                <h4 class="font-anton text-xl md:text-4xl uppercase leading-tight">
-                  {p.title}
-                </h4>
-                <p class="text-xs md:text-sm uppercase font-bold tracking-[0.3em] text-(--color-gold) mt-1 md:mt-2">
-                  {p.tags}
-                </p>
+
+            {p.link !== "#" && (
+              <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono text-cyan-300 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>Ver Sitio En Vivo</span>
+                <Icon name="ArrowRight" class="w-3.5 h-3.5" />
               </div>
-              {p.wide && (
-                <div class="flex items-center gap-3 lg:gap-4 text-(--color-gold)">
-                  <span class="font-anton text-base md:text-xl uppercase">
-                    Ver Proyecto
-                  </span>
-                  <Icon name="ArrowRight" class="text-xl md:text-3xl" />
-                </div>
-              )}
+            )}
+          </div>
+
+          <!-- Content Details -->
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-mono text-cyan-400 font-semibold">{p.client}</span>
+            <h3 class="font-space text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+              {p.title}
+            </h3>
+            <p class="text-xs text-slate-300 font-light leading-relaxed mb-3">
+              {p.impact}
+            </p>
+
+            <!-- Impact Tags -->
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+              {p.tags.map((tag) => (
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-white/10 text-slate-200 border border-white/10 font-medium">
+                  {tag}
+                </span>
+              ))}
             </div>
-          </a>
-        ))
-      }
+          </div>
+        </a>
+      ))}
     </div>
+
   </div>
 </section>
 
@@ -176,11 +182,11 @@ const projects = [
 
       filterBtns.forEach((b) => {
         if (b === btn) {
-          b.classList.add("border-(--color-gold)", "text-(--color-gold)");
-          b.classList.remove("border-white/10", "text-white/40");
+          b.classList.add("border-cyan-500", "bg-cyan-500/10", "text-cyan-300");
+          b.classList.remove("border-white/10", "text-gray-400");
         } else {
-          b.classList.remove("border-(--color-gold)", "text-(--color-gold)");
-          b.classList.add("border-white/10", "text-white/40");
+          b.classList.remove("border-cyan-500", "bg-cyan-500/10", "text-cyan-300");
+          b.classList.add("border-white/10", "text-gray-400");
         }
       });
 
@@ -195,3 +201,4 @@ const projects = [
     });
   });
 </script>
+

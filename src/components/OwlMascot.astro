@@ -1,0 +1,52 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+}
+
+const { size = 36, class: className = "" } = Astro.props;
+---
+
+<div class={`inline-flex items-center justify-center p-2 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 backdrop-blur-md shadow-lg shadow-cyan-500/10 ${className}`}>
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 36 36"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="DevAE Tech Owl Mascot"
+  >
+    <defs>
+      <linearGradient id="owl-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00f2fe" />
+        <stop offset="100%" stop-color="#7928ca" />
+      </linearGradient>
+    </defs>
+
+    <!-- Owl Head Contour -->
+    <path
+      d="M18 4C10.82 4 5 9.82 5 17C5 24.18 10.82 30 18 30C25.18 30 31 24.18 31 17C31 9.82 25.18 4 18 4Z"
+      stroke="url(#owl-grad)"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    
+    <!-- Feather Tufts / Ears -->
+    <path d="M7 8L12 13" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" />
+    <path d="M29 8L24 13" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Big Intelligent Goggles / Eyes -->
+    <circle cx="12.5" cy="16.5" r="4.5" fill="#0a0b0e" stroke="#00f2fe" stroke-width="1.8" />
+    <circle cx="23.5" cy="16.5" r="4.5" fill="#0a0b0e" stroke="#00f2fe" stroke-width="1.8" />
+
+    <!-- Glowing Pupils -->
+    <circle cx="13.5" cy="16" r="1.8" fill="#00f2fe" />
+    <circle cx="22.5" cy="16" r="1.8" fill="#00f2fe" />
+
+    <!-- Sharp Beak -->
+    <path d="M18 18.5L16 22H20L18 18.5Z" fill="#fda085" />
+    
+    <!-- Chest Crest lines -->
+    <path d="M15 25C17 26.5 19 26.5 21 25" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+</div>

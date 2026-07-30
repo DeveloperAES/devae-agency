@@ -3,295 +3,169 @@ import Icon from "./Icon.astro";
 
 const plans = [
   {
-    name: "Página Informativa",
-    price: "1000",
+    name: "Landing Page Vendedora",
+    badge: "Ideal para Emprendedores",
+    price: "790",
     unit: "S/",
-    desc: "Ideal para presentar tu negocio, servicios o marca profesional con autoridad.",
+    desc: "Diseñada para captar clientes de inmediato y dirigir el tráfico directamente a llamadas o WhatsApp.",
     popular: false,
     features: [
-      "Diseño tradicional y limpio",
-      "Estructura 100% responsiva (Móvil/Desktop)",
-      "Optimización de velocidad y carga",
-      "Integración con redes sociales",
-      "Formulario de contacto integrado",
-      "Panel de administración incluído (WordPress)",
+      "Diseño Exclusivo Centrado en Ventas",
+      "100% Adaptable a Celulares y Computadoras",
+      "Carga Ultra Rápida Garantizada en Google",
+      "Formulario de Contacto & Botón WhatsApp Directo",
+      "Certificado de Seguridad SSL Gratuito",
+      "Entrega Rápida en 5 a 7 días hábiles",
     ],
-    waMessage:
-      "Hola, me interesa cotizar una Página Informativa (Desde S/ 990).",
+    waMessage: "Hola DevAE, quiero cotizar la Landing Page Vendedora.",
   },
   {
-    name: "Landing Page",
-    price: "550",
+    name: "Sitio Web o Tienda Online",
+    badge: "Más Solicitado por Empresas",
+    price: "1,850",
     unit: "S/",
-    desc: "La opción recomendada. Diseñada específicamente para convertir visitas en prospectos y clientes reales.",
+    desc: "Solución integral para marcas que buscan posicionarse con autoridad y vender productos o servicios 24/7.",
     popular: true,
     features: [
-      "Diseño único de alta fidelidad",
-      "Animaciones y micro-interacciones interactivas",
-      "Hasta 4 secciones adicionales",
-      "Estructura 100% responsiva optimizada",
-      "Optimización de carga Lighthouse extrema",
-      "Formulario de contacto + lead capture",
-      "Integración de redes sociales",
-      "Panel de administración incluído (WordPress)",
+      "Diseño Profesional a Medida de tu Marca",
+      "Tienda Online Completa o Portal Corporativo",
+      "Panel Administrable Fácil (Modifica Fotos y Textos)",
+      "Cobro Seguro con Tarjetas de Crédito y Débito",
+      "Optimización de Posicionamiento en Google (SEO)",
+      "Capacitación Grabada Paso a Paso Incluida",
+      "Entrega en 10 a 14 días hábiles",
     ],
-    waMessage:
-      "Hola, me interesa cotizar una Landing Page de alta conversión (Desde S/ 1,490).",
+    waMessage: "Hola DevAE, me interesa el plan Sitio Web o Tienda Online.",
   },
   {
-    name: "Tienda Online",
-    price: "1,800",
+    name: "Sistema o Web a Medida",
+    badge: "Empresas & Proyectos Especiales",
+    price: "3,500",
     unit: "S/",
-    desc: "Un canal de venta e-commerce completo, autogestionable y sin límites.",
+    desc: "Desarrollo exclusivo adaptado a los flujos de trabajo, automatizaciones e integraciones de tu empresa.",
     popular: false,
     features: [
-      "Diseño personalizado premium",
-      "Estructura 100% responsiva adaptativa",
-      "Carrito de compras y pasarela de pago",
-      "Carga inicial de hasta 50 productos",
-      "Optimización de SEO para productos",
-      "Optimización de velocidad de carga",
-      "Panel de administración incluído (WordPress)",
+      "Desarrollo 100% Personalizado a tu Medida",
+      "Conexión con tus Herramientas de Pago y Gestión",
+      "Servidores de Alta Velocidad & Seguridad Máxima",
+      "Flujos de Trabajo Automatizados para tu Equipo",
+      "Soporte Técnico Prioritario & Garantía Continua",
+      "Acuerdo de Confidencialidad NDA Disponible",
     ],
-    waMessage:
-      "Hola, me interesa cotizar una Tienda Online completa (Desde S/ 1,800).",
+    waMessage: "Hola DevAE, requiero cotizar un Proyecto a Medida.",
   },
 ];
 
 const faqs = [
   {
-    question: "¿Cuál es la modalidad de pago?",
-    answer:
-      "Se realiza un pago inicial del 50% al comenzar el desarrollo del proyecto y el 50% restante una vez finalizado y listo para ser entregado.",
+    question: "¿Cómo es la modalidad de trabajo y pago?",
+    answer: "Trabajamos con una inicial del 50% para arrancar el proyecto y el 50% restante contra la entrega final en servidor de prueba, previa aprobación completa.",
   },
   {
-    question: "¿Cuánto tiempo se demora el desarrollo?",
-    answer:
-      "El plazo de entrega promedio es de 7 a 14 días hábiles, dependiendo de la complejidad y del feedback. Garantizamos un plazo máximo de 30 días hábiles en contrato ante cualquier eventualidad.",
+    question: "¿Qué garantía ofrecen sobre la velocidad y el código?",
+    answer: "Garantizamos un puntaje mínimo de 90/100 a 100/100 en Google PageSpeed Insights. Si la web no cumple los parámetros de rendimiento acordados, ajustamos la optimización sin costo.",
   },
   {
-    question:
-      "¿Tiene algún costo subir productos adicionales en la Tienda Online?",
-    answer:
-      "Los primeros 50 productos están incluidos y configurados de forma gratuita. Si deseas agregar productos adicionales posteriores, el costo por subida manual optimizada es de $3 USD en el plan Premium y $5 USD en el plan E-commerce.",
+    question: "¿Puedo administrar el contenido de mi sitio por mi cuenta?",
+    answer: "Sí, todos los proyectos Pro y Enterprise incluyen capacitación grabada y paneles de administración intuitivos para que edites textos, productos e imágenes sin tocar código.",
   },
   {
-    question: "¿Cuáles son los beneficios de la subida manual de productos?",
-    answer:
-      "Cada producto se optimiza manualmente para buscadores (SEO). Mejoramos las descripciones, etiquetas, atributos (talla, color, etc.) y optimizamos las imágenes para que carguen rápido y posicionen mejor en Google.",
-  },
-  {
-    question: "¿Qué cubre la garantía y el soporte?",
-    answer:
-      "La garantía cubre la corrección de errores técnicos, bugs de visualización y pequeñas actualizaciones de información sobre el sitio entregado sin costo adicional durante el periodo establecido (30, 60 o 90 días).",
-  },
-  {
-    question: "¿Mi web tendrá mantenimiento posterior?",
-    answer:
-      "El primer periodo está incluido gratis según tu plan. Posterior a este plazo, ofrecemos planes mensuales opcionales de mantenimiento preventivo, seguridad y actualizaciones para mantener tu sitio al 100%.",
+    question: "¿Trabajan como marca blanca para otras agencias o empresas?",
+    answer: "Absolutamente. Colaboramos frecuentemente como brazo técnico de agencias creativas y firmas de marketing firmando acuerdos de confidencialidad (NDA).",
   },
 ];
 ---
 
-<section
-  id="pricing"
-  class="py-24 md:py-40 bg-(--color-onyx) px-4 sm:px-6 relative overflow-hidden"
->
-  <div
-    class="absolute -left-32 top-1/4 w-96 h-96 bg-(--color-gold)/5 blur-3xl rounded-full pointer-events-none"
-  >
-  </div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <!-- Header -->
-    <div class="mb-16 md:mb-24 text-center reveal-pricing">
-      <span
-        class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-4"
-        >// Inversión Inteligente</span
-      >
-      <h2 class="font-anton text-5xl md:text-7xl lg:text-8xl uppercase leading-[1]">
-        Planes & <span class="text-(--color-gold)">Precios</span>
+<section id="pricing" class="py-24 lg:py-32 px-4 sm:px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 mb-4">
+        <span>// INVERSIÓN & MODELOS DE TRABAJO</span>
+      </div>
+      <h2 class="font-space text-3xl sm:text-5xl font-bold text-white tracking-tight">
+        Planes transparentes diseñados para <span class="gradient-text-cyan">escalar</span>.
       </h2>
-      <p
-        class="text-sm opacity-50 mt-4 max-w-xl mx-auto uppercase tracking-widest leading-relaxed"
-      >
-        Precios transparentes y sin sorpresas. Todos los planes incluyen el
-        primer año de hosting y dominio gratis.
+      <p class="text-sm text-gray-400 font-light mt-3">
+        Formatos flexibles adaptados tanto a startups que inician como a empresas y agencias consolidadas.
       </p>
     </div>
 
-    <!-- Pricing Cards -->
-    <div
-      class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-24 md:mb-32"
-    >
-      {
-        plans.map((p) => (
-          <div
-            class={`reveal-pricing bg-(--color-jet) p-8 md:p-10 brutalist-border flex flex-col justify-between relative group ${p.popular ? "border-(--color-gold) scale-[1.02] z-10" : ""}`}
-          >
-            {p.popular && (
-              <span class="absolute top-0 right-8 -translate-y-1/2 bg-(--color-gold) text-black text-[10px] font-black uppercase tracking-widest px-4 py-1">
-                Más Contratado
-              </span>
-            )}
+    <!-- Pricing Bento Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+      {plans.map((p) => (
+        <div
+          class={`bento-card p-8 flex flex-col justify-between relative ${
+            p.popular ? "border-cyan-500/60 shadow-2xl shadow-cyan-500/10 ring-1 ring-cyan-500/30" : ""
+          }`}
+        >
+          {p.popular && (
+            <span class="absolute top-3 right-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-space text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md z-10">
+              MÁS SOLICITADO
+            </span>
+          )}
 
-            <div>
-              <div class="flex justify-between items-start mb-6">
-                <h3 class="font-anton text-2xl md:text-3xl uppercase tracking-tight group-hover:text-(--color-gold) transition-colors">
-                  {p.name}
-                </h3>
-                {p.popular ? (
-                  <Icon name="Flame" class="text-3xl text-(--color-gold)" />
-                ) : (
-                  <Icon name="Layers" class="text-3xl text-white/20" />
-                )}
+          <div>
+            <span class="text-xs font-mono text-cyan-400 block mb-2">{p.badge}</span>
+            <h3 class="font-space text-2xl font-bold text-white mb-2">{p.name}</h3>
+            <p class="text-xs text-gray-400 font-light leading-relaxed mb-6">{p.desc}</p>
+
+            <!-- Price display -->
+            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5 mb-6">
+              <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest block">Inversión desde</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-xl font-bold font-space text-gray-400">{p.unit}</span>
+                <span class="text-4xl font-bold font-space text-white">{p.price}</span>
+                <span class="text-xs text-gray-400 font-mono">/ proyecto</span>
               </div>
-
-              <p class="text-sm opacity-60 leading-relaxed mb-8">{p.desc}</p>
-
-              <div class="flex flex-col gap-1 mb-8 border-b border-white/10 pb-8">
-                <span class="text-xs uppercase opacity-60 font-bold tracking-widest text-(--color-gold)">
-                  Proyectos desde
-                </span>
-                <div class="flex items-baseline gap-2 mt-2">
-                  <span class="text-3xl md:text-4xl font-anton text-white/50">
-                    {p.unit}
-                  </span>
-                  <span class="text-5xl md:text-6xl font-anton text-white leading-none">
-                    {p.price}
-                  </span>
-                </div>
-              </div>
-
-              <ul class="flex flex-col gap-4 mb-10">
-                {p.features.map((f) => (
-                  <li class="flex items-start gap-3 text-sm opacity-80">
-                    <Icon
-                      name="Check"
-                      class="text-xl text-(--color-gold) shrink-0 mt-0.5"
-                    />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            <a
-              href={`https://wa.me/51991145635?text=${encodeURIComponent(p.waMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`w-full py-4 text-center font-anton text-lg uppercase tracking-wider transition-colors ${
-                p.popular
-                  ? "bg-(--color-gold) text-black hover:bg-white"
-                  : "border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold)"
-              }`}
-            >
-              Contratar Servicio
-            </a>
+            <!-- Features -->
+            <ul class="space-y-3 mb-8">
+              {p.features.map((f) => (
+                <li class="flex items-start gap-2.5 text-xs text-gray-300">
+                  <Icon name="Check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        ))
-      }
-    </div>
 
-    <!-- Payment info banner -->
-    <div
-      class="reveal-pricing bg-(--color-jet) p-8 md:p-12 brutalist-border flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-24 md:mb-36 relative overflow-hidden"
-    >
-      <div
-        class="absolute top-0 right-0 w-32 h-full bg-(--color-gold)/5 -skew-x-12 transform origin-top-right"
-      >
-      </div>
-      <div class="flex gap-6 items-center">
-        <Icon
-          name="CircleDollarSign"
-          class="text-4xl md:text-5xl text-(--color-gold)"
-        />
-        <div>
-          <h4 class="font-anton text-2xl uppercase">
-            Modalidad de pago flexible
-          </h4>
-          <p class="text-sm opacity-50 mt-1">
-            50% al iniciar el proyecto y el 50% restante al finalizar y entregar
-            tu web.
-          </p>
+          <a
+            href={`https://wa.me/51991145635?text=${encodeURIComponent(p.waMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`w-full py-3.5 rounded-full text-center font-space font-semibold text-xs tracking-wide transition-all ${
+              p.popular
+                ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/20"
+                : "glass-pill text-white hover:bg-white/10"
+            }`}
+          >
+            Seleccionar Plan →
+          </a>
         </div>
-      </div>
-      <div class="flex gap-6 items-center">
-        <Icon
-          name="CalendarDays"
-          class="text-4xl md:text-5xl text-(--color-gold)"
-        />
-        <div>
-          <h4 class="font-anton text-2xl uppercase">Entrega garantizada</h4>
-          <p class="text-sm opacity-50 mt-1">
-            Plazos de 7 a 14 días hábiles. Penalizaciones por retrasos aplicadas
-            en contrato.
-          </p>
-        </div>
+      ))}
+    </div>
+
+    <!-- FAQs -->
+    <div class="max-w-3xl mx-auto">
+      <h3 class="font-space text-2xl font-bold text-white text-center mb-8">Preguntas Frecuentes</h3>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bento-card p-6 group cursor-pointer">
+            <summary class="flex justify-between items-center text-sm font-semibold text-white">
+              <span>{faq.question}</span>
+              <Icon name="Plus" class="w-4 h-4 text-cyan-400 group-open:rotate-45 transition-transform" />
+            </summary>
+            <p class="mt-3 text-xs text-gray-400 leading-relaxed font-light border-t border-white/5 pt-3">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
       </div>
     </div>
 
-    <!-- FAQ Accordion Section -->
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-12 md:mb-16 text-center reveal-pricing">
-        <span
-          class="text-(--color-gold) text-sm font-bold uppercase tracking-[0.4em] block mb-3"
-          >// Resolviendo Dudas</span
-        >
-        <h3 class="font-anton text-4xl md:text-5xl lg:text-6xl uppercase leading-[1]">
-          Preguntas Frecuentes
-        </h3>
-      </div>
-
-      <div class="flex flex-col gap-4 reveal-pricing">
-        {
-          faqs.map((faq) => (
-            <details class="faq-details bg-(--color-jet) brutalist-border p-6 md:p-8 group cursor-pointer transition-all duration-300">
-              <summary class="flex justify-between items-center list-none select-none">
-                <span class="pr-6 text-base md:text-lg font-semibold leading-snug">{faq.question}</span>
-                <div class="shrink-0 text-(--color-gold)">
-                  <span class="plus-icon block group-open:hidden">
-                    <Icon name="Plus" class="w-6 h-6" />
-                  </span>
-                  <span class="minus-icon hidden group-open:block">
-                    <Icon name="Minus" class="w-6 h-6" />
-                  </span>
-                </div>
-              </summary>
-              <div class="mt-6 pt-6 border-t border-white/10 text-sm md:text-base opacity-60 leading-relaxed font-light">
-                {faq.answer}
-              </div>
-            </details>
-          ))
-        }
-      </div>
-
-      <div class="text-center mt-16 md:mt-20 reveal-pricing flex flex-col items-center">
-        <p class="text-sm opacity-50 uppercase tracking-widest mb-6">
-          ¿Tienes un proyecto especial o dudas adicionales?
-        </p>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-3 border border-(--color-gold)/40 text-(--color-gold) font-bold uppercase tracking-widest text-xs px-8 py-4 hover:bg-(--color-gold) hover:text-black transition-all duration-300"
-        >
-          Contáctame Directamente
-          <Icon name="ArrowRight" class="text-base transition-transform group-hover:translate-x-1" />
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
-<style>
-  /* Remove standard summary marker */
-  summary::-webkit-details-marker {
-    display: none;
-  }
-  summary {
-    display: flex;
-  }
-
-  .faq-details[open] {
-    border-color: var(--color-gold);
-  }
-</style>

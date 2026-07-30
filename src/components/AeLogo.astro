@@ -5,19 +5,47 @@ interface Props {
   class?: string;
 }
 
-const { width = 48, height = 32, class: className = '' } = Astro.props;
+const { width = 36, height = 36, class: className = '' } = Astro.props;
 ---
 
 <svg
-  class={`ae-logo-svg ${className}`}
+  class={`ae-michi-logo ${className}`}
   width={width}
   height={height}
-  viewBox="0 0 48 32"
+  viewBox="0 0 36 36"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  aria-label="DevAE logo"
+  aria-label="DevAE Studio Michi Logo"
 >
-  <path d="M2 30L14 2H20L8 30H2Z" fill="currentColor"></path>
-  <path d="M12 30L24 2H30L18 30H12Z" fill="#D4AF37"></path>
-  <path d="M28 30V2H46V7H34V13H44V18H34V25H46V30H28Z" fill="currentColor"></path>
+  <defs>
+    <linearGradient id="michi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+  </defs>
+
+  <!-- Pointy Cat Ears -->
+  <path d="M7 16L10 6L16 12" fill="url(#michi-grad)" stroke="#00f2fe" stroke-width="1.2" />
+  <path d="M29 16L26 6L20 12" fill="url(#michi-grad)" stroke="#00f2fe" stroke-width="1.2" />
+
+  <!-- Cat Head Contour -->
+  <path
+    d="M18 10C11.5 10 7 14.5 7 20C7 26.5 12 30 18 30C24 30 29 26.5 29 20C29 14.5 24.5 10 18 10Z"
+    fill="#0a0b0e"
+    stroke="#00f2fe"
+    stroke-width="1.8"
+  />
+
+  <!-- Glowing Almond Cyber Eyes -->
+  <path d="M10 19C11.5 16.5 15 16.5 16.5 19C15 21.5 11.5 21.5 10 19Z" fill="#00f2fe" />
+  <path d="M26 19C24.5 16.5 21 16.5 19.5 19C21 21.5 24.5 21.5 26 19Z" fill="#00f2fe" />
+  
+  <!-- Slit Pupils -->
+  <ellipse cx="13.2" cy="19" rx="0.9" ry="2" fill="#0a0b0e" />
+  <ellipse cx="22.8" cy="19" rx="0.9" ry="2" fill="#0a0b0e" />
+
+  <!-- Cute Nose -->
+  <path d="M18 22L16.8 23.5H19.2L18 22Z" fill="#fda085" />
 </svg>
+
+

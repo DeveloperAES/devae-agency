@@ -1,252 +1,329 @@
 ---
 import Icon from "./Icon.astro";
+import OwlMascot from "./OwlMascot.astro";
+import CatMascot from "./CatMascot.astro";
 ---
 
 <section
   id="dashboard-bento"
-  class="relative min-h-screen pt-20 pb-0 px-4 sm:px-6 lg:px-12 flex flex-col justify-center overflow-hidden"
+  class="relative min-h-[92vh] pt-36 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-12 flex flex-col justify-center overflow-hidden"
 >
-  <!-- Diffused global glow -->
+  <!-- Background Glow Orbs -->
   <div
-    class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30"
+    class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10 pulse-glow"
   >
-    <div
-      class="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-(--color-gold) blur-[120px] rounded-full transform translate-x-1/4"
-    >
-    </div>
+  </div>
+  <div
+    class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none -z-10 pulse-glow"
+    style="animation-delay: 2s;"
+  >
   </div>
 
-  <!-- Main two-column hero -->
   <div
-    class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center min-h-[90vh]"
+    class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
   >
-    <!-- LEFT: Text content -->
-    <div class="reveal-hero flex flex-col gap-8 lg:pr-12 pt-8 lg:pt-0">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-3 self-start">
-        <span class="w-2 h-2 bg-(--color-gold) rounded-full animate-pulse"
-        ></span>
-        <span class="text-xs font-bold uppercase tracking-[0.3em] opacity-50"
-          >Disponible para nuevos proyectos</span
+    <!-- LEFT COLUMN: Headline & Marketing Copy (7 cols) -->
+    <div class="reveal-hero lg:col-span-7 flex flex-col gap-8">
+      <!-- Outbound Agency Badge with Cyber Cat & Tech Owl Mascots -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+        <CatMascot size={28} />
+        <OwlMascot size={28} />
+        <div
+          class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-cyan-300 w-fit backdrop-blur-md"
         >
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          <span>Estudio de Desarrollo Web & Estrategia Digital</span>
+        </div>
       </div>
 
-      <!-- Headline -->
+      <!-- Main Agency Headline -->
       <h1
-        class="font-anton text-[clamp(3rem,8vw,6.5rem)] uppercase leading-[0.9] tracking-tighter"
-        id="hero-headline"
+        class="font-space text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]"
       >
-        Tu negocio,<br />
-        <span class="text-(--color-gold)">online</span><br />
-        y vendiendo.
+        Diseñamos sitios web que <span class="gradient-text-cyan"
+          >atraen clientes</span
+        > y destacan tu marca.
       </h1>
 
-      <!-- Subtitle -->
+      <!-- Subtitle for Outbound Clients (Clean, no code jargon) -->
       <p
-        class="text-lg lg:text-xl opacity-60 leading-relaxed max-w-md font-light"
+        class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed max-w-2xl"
       >
-        Creamos tu página web para que atraiga clientes, genere ventas y trabaje
-        por ti — sin que tengas que entender nada de tecnología.
+        Creamos páginas web, tiendas online y portales corporativos de <strong
+          class="text-white font-medium"
+          >alto rendimiento y diseño exclusivo</strong
+        >. Páginas ultra rápidas en celulares y computadoras, preparadas para
+        convertir visitas en ventas reales.
       </p>
 
       <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a
-          href="#contact"
-          id="hero-cta-primary"
-          class="inline-flex items-center justify-center gap-3 bg-(--color-gold) text-black font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 hover:bg-white group"
-        >
-          Quiero mi web ahora
+      <div class="flex flex-col sm:flex-row gap-4 pt-2">
+        <a href="#contact" class="btn-primary group">
+          <span>Agendar Consulta Gratuita</span>
           <Icon
             name="ArrowRight"
-            class="text-base transition-transform group-hover:translate-x-1"
+            class="w-4 h-4 transition-transform group-hover:translate-x-1"
           />
         </a>
-        <a
-          href="#portfolio"
-          id="hero-cta-secondary"
-          class="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-bold uppercase tracking-widest text-sm px-8 py-4 transition-all duration-300 hover:border-(--color-gold) hover:text-(--color-gold)"
-        >
-          Ver proyectos
+        <a href="#portfolio" class="btn-secondary group">
+          <span>Ver Proyectos Realizados</span>
         </a>
       </div>
 
-      <!-- Social proof bar -->
+      <!-- Outbound Social Proof Metrics Bar -->
       <div
-        class="flex items-center gap-8 pt-4 border-t border-white/10"
         id="stats-container"
+        class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 mt-4 border-t border-white/10 max-w-xl"
       >
         <div class="flex flex-col">
-          <div class="flex items-baseline">
+          <div class="flex items-baseline gap-0.5">
             <span
-              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
-              data-target="99">0</span
+              class="font-space text-2xl sm:text-3xl font-bold text-cyan-400 stat-number"
+              data-target="100">0</span
             >
-            <span class="font-anton text-3xl text-(--color-gold) leading-none"
+            <span
+              class="font-space text-base sm:text-xl font-bold text-cyan-400"
+              >/100</span
+            >
+          </div>
+          <span
+            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
+            >Velocidad Google</span
+          >
+        </div>
+
+        <div class="flex flex-col border-l border-white/10 pl-3 sm:pl-6">
+          <div class="flex items-baseline gap-0.5">
+            <span
+              class="font-space text-2xl sm:text-3xl font-bold text-amber-400"
+              >+</span
+            >
+            <span
+              class="font-space text-2xl sm:text-3xl font-bold text-amber-400 stat-number"
+              data-target="140">0</span
+            >
+            <span
+              class="font-space text-base sm:text-xl font-bold text-amber-400"
               >%</span
             >
           </div>
           <span
-            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
-            >Velocidad en Google</span
+            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
+            >Más Conversión</span
           >
         </div>
-        <div class="w-px h-10 bg-white/10"></div>
-        <div class="flex flex-col">
-          <div class="flex items-baseline">
-            <span class="font-anton text-3xl text-(--color-gold) leading-none"
-              >+</span
+
+        <div class="flex flex-col border-l border-white/10 pl-3 sm:pl-6">
+          <div class="flex items-baseline gap-0.5">
+            <span
+              class="font-space text-2xl sm:text-3xl font-bold text-purple-400"
+              >100</span
             >
             <span
-              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
-              data-target="20">0</span
+              class="font-space text-base sm:text-xl font-bold text-purple-400"
+              >%</span
             >
           </div>
           <span
-            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
-            >Proyectos entregados</span
-          >
-        </div>
-        <div class="w-px h-10 bg-white/10"></div>
-        <div class="flex flex-col">
-          <div class="flex items-baseline">
-            <span
-              class="font-anton text-3xl text-(--color-gold) leading-none stat-number"
-              data-target="24">0</span
-            >
-            <span class="font-anton text-3xl text-(--color-gold) leading-none"
-              >h</span
-            >
-          </div>
-          <span
-            class="text-[10px] uppercase tracking-widest opacity-40 font-bold mt-1"
-            >Tiempo de respuesta</span
+            class="text-[9px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 mt-1 font-medium"
+            >Autogestionable</span
           >
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: Visual / mockup carousel -->
-    <div
-      class="reveal-hero relative flex items-center justify-center lg:justify-end h-[50vw] lg:h-full min-h-[320px] lg:min-h-0 perspective-[1000px]"
-    >
-      <!-- Image Carousel Container -->
+    <!-- RIGHT COLUMN: Interactive Project Showcase Carousel (5 cols) -->
+    <div class="reveal-hero lg:col-span-5 flex flex-col gap-4 relative">
+      <!-- Bento Card: Interactive Showcase Slider -->
       <div
-        class="relative w-full max-w-xl lg:max-w-none lg:w-[120%] lg:-mr-20 h-full flex items-center justify-center image-mask"
+        id="hero-carousel"
+        class="bento-card p-5 flex flex-col gap-4 relative overflow-hidden group"
       >
-        <img
-          src="/hero-devices.png"
-          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-100"
-        />
-        <img
-          src="/hero-carousel-1.png"
-          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-0"
-        />
-        <img
-          src="/hero-carousel-2.png"
-          class="hero-carousel-img absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-1000 opacity-0"
-        />
-      </div>
-
-      <!-- Floating badge -->
-      <div
-        class="absolute top-4 right-4 lg:top-8 lg:right-0 z-20 bg-(--color-jet)/80 backdrop-blur-md border border-white/10 px-5 py-3 flex items-center gap-3 rounded-sm shadow-xl"
-      >
-        <Icon name="Star" class="text-(--color-gold) text-lg animate-pulse" />
-        <div>
-          <div class="font-anton text-lg leading-none text-white">
-            +3 proyectos
+        <!-- Browser Mockup Header Bar -->
+        <div
+          class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-black/40 border border-white/10"
+        >
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+            <span
+              id="carousel-url"
+              class="text-[11px] font-mono text-cyan-300 ml-2"
+              >https://ysique.com</span
+            >
           </div>
-          <div
-            class="text-[10px] uppercase tracking-widest text-white/50 mt-0.5"
+          <span
+            class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold"
           >
-            En el portafolio
+            PROYECTO EN VIVO
+          </span>
+        </div>
+
+        <!-- Carousel Slide Container -->
+        <div
+          class="relative aspect-[16/10] rounded-xl overflow-hidden bg-black/60 border border-white/10"
+        >
+          <!-- Slide 1: Ysique Store -->
+          <div
+            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100"
+            data-index="0"
+          >
+            <img
+              src="/projects/ysique.png"
+              alt="Ysique Store - E-Commerce de Moda"
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="absolute bottom-4 left-4 right-4 flex items-end justify-between"
+            >
+              <div>
+                <span
+                  class="text-[10px] font-mono uppercase text-cyan-300 px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-500/30"
+                  >E-Commerce</span
+                >
+                <h3 class="text-base font-bold text-white font-space mt-1">
+                  Ysique Store
+                </h3>
+                <p class="text-xs text-slate-300 font-light">
+                  +140% Incremento en ventas online
+                </p>
+              </div>
+              <a
+                href="https://ysique.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-mono px-3 py-1.5 rounded-full bg-white/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md flex items-center gap-1 transition-colors"
+              >
+                <span>Ver Demo</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 2: OIG Perú -->
+          <div
+            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none"
+            data-index="1"
+          >
+            <img
+              src="/projects/oigperu.png"
+              alt="OIG Perú - Portal Corporativo"
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="absolute bottom-4 left-4 right-4 flex items-end justify-between"
+            >
+              <div>
+                <span
+                  class="text-[10px] font-mono uppercase text-amber-300 px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/30"
+                  >Corporativo</span
+                >
+                <h3 class="text-base font-bold text-white font-space mt-1">
+                  OIG Perú
+                </h3>
+                <p class="text-xs text-slate-300 font-light">
+                  Posicionamiento SEO 100/100
+                </p>
+              </div>
+              <a
+                href="https://oigperu.com.pe/"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-mono px-3 py-1.5 rounded-full bg-white/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md flex items-center gap-1 transition-colors"
+              >
+                <span>Ver Demo</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3: Olva Platform -->
+          <div
+            class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none"
+            data-index="2"
+          >
+            <img
+              src="/projects/andersonv9.png"
+              alt="Olva Tracking Platform"
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="absolute bottom-4 left-4 right-4 flex items-end justify-between"
+            >
+              <div>
+                <span
+                  class="text-[10px] font-mono uppercase text-purple-300 px-2 py-0.5 rounded bg-purple-500/20 border border-purple-500/30"
+                  >Sistema Logístico</span
+                >
+                <h3 class="text-base font-bold text-white font-space mt-1">
+                  Olva Tracking
+                </h3>
+                <p class="text-xs text-slate-300 font-light">
+                  Rastreo de envíos en tiempo real
+                </p>
+              </div>
+              <a
+                href="https://andersonv9.sg-host.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-mono px-3 py-1.5 rounded-full bg-white/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-md flex items-center gap-1 transition-colors"
+              >
+                <span>Ver Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Footer Navigation Controls -->
+        <div class="flex items-center justify-between pt-1">
+          <div class="flex items-center gap-2">
+            <button
+              id="prev-slide"
+              class="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-white/15 text-white flex items-center justify-center text-xs transition-colors"
+              >←</button
+            >
+            <button
+              id="next-slide"
+              class="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-white/15 text-white flex items-center justify-center text-xs transition-colors"
+              >→</button
+            >
+            <span class="text-xs text-slate-400 font-mono ml-2"
+              >Casos Reales <span id="slide-indicator" class="text-cyan-400"
+                >1/3</span
+              ></span
+            >
+          </div>
+
+          <!-- Carousel Dots Indicator -->
+          <div class="flex items-center gap-1.5">
+            <span
+              class="dot-indicator w-2 h-2 rounded-full bg-cyan-400 cursor-pointer"
+              data-slide="0"></span>
+            <span
+              class="dot-indicator w-2 h-2 rounded-full bg-white/20 cursor-pointer"
+              data-slide="1"></span>
+            <span
+              class="dot-indicator w-2 h-2 rounded-full bg-white/20 cursor-pointer"
+              data-slide="2"></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Bottom scrolling services strip -->
-  <!-- <div class="relative z-10 w-full border-t border-white/5 mt-auto py-5 overflow-hidden bg-transparent">
-    <div class="flex items-center gap-12 animate-marquee whitespace-nowrap opacity-30 text-xs font-bold uppercase tracking-[0.3em]">
-      <span>Landing Pages</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Tiendas Online</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Sitios Corporativos</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Integraciones</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>WordPress</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>WooCommerce</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Landing Pages</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Tiendas Online</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Sitios Corporativos</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>Integraciones</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>WordPress</span>
-      <span class="text-(--color-gold)">·</span>
-      <span>WooCommerce</span>
-      <span class="text-(--color-gold)">·</span>
-    </div>
-  </div> -->
 </section>
 
-<style>
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
-  }
-
-  /* Blends the square edges of the images smoothly into the background */
-  .image-mask {
-    -webkit-mask-image: radial-gradient(
-      circle at center,
-      rgba(0, 0, 0, 1) 35%,
-      rgba(0, 0, 0, 0) 65%
-    );
-    mask-image: radial-gradient(
-      circle at center,
-      rgba(0, 0, 0, 1) 35%,
-      rgba(0, 0, 0, 0) 65%
-    );
-  }
-
-  .hero-carousel-img {
-    mix-blend-mode: lighten;
-  }
-</style>
-
 <script>
-  // Setup Carousel
-  const images = document.querySelectorAll(".hero-carousel-img");
-  let currentImage = 0;
-
-  if (images.length > 1) {
-    setInterval(() => {
-      images[currentImage].classList.remove("opacity-100");
-      images[currentImage].classList.add("opacity-0");
-
-      currentImage = (currentImage + 1) % images.length;
-
-      images[currentImage].classList.remove("opacity-0");
-      images[currentImage].classList.add("opacity-100");
-    }, 4000); // Change image every 4 seconds
-  }
-
   // Setup Number Counters
   const statsSection = document.getElementById("stats-container");
   const numbers = document.querySelectorAll(".stat-number");
@@ -255,16 +332,17 @@ import Icon from "./Icon.astro";
   const animateNumbers = () => {
     numbers.forEach((num) => {
       const target = parseInt(num.getAttribute("data-target") || "0", 10);
-      const duration = 2000; // 2 seconds
-      const stepTime = Math.abs(Math.floor(duration / target));
+      const duration = 1800;
+      const stepTime = Math.max(10, Math.floor(duration / target));
       let current = 0;
 
       const timer = setInterval(() => {
-        current += 1;
-        num.textContent = current.toString();
+        current += Math.ceil(target / 40);
         if (current >= target) {
           clearInterval(timer);
           num.textContent = target.toString();
+        } else {
+          num.textContent = current.toString();
         }
       }, stepTime);
     });
@@ -278,9 +356,91 @@ import Icon from "./Icon.astro";
           animateNumbers();
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.3 },
     );
 
     observer.observe(statsSection);
   }
+
+  // Hero Project Carousel Logic
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dot-indicator");
+  const urlEl = document.getElementById("carousel-url");
+  const indicatorEl = document.getElementById("slide-indicator");
+  const prevBtn = document.getElementById("prev-slide");
+  const nextBtn = document.getElementById("next-slide");
+
+  const urls = [
+    "https://ysique.com",
+    "https://oigperu.com.pe",
+    "olvacourier.com",
+  ];
+  let currentIndex = 0;
+  let timer: any = null;
+
+  function showSlide(index: number) {
+    currentIndex = index;
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.remove("opacity-0", "pointer-events-none");
+        slide.classList.add("opacity-100");
+      } else {
+        slide.classList.remove("opacity-100");
+        slide.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.remove("bg-white/20");
+        dot.classList.add("bg-cyan-400");
+      } else {
+        dot.classList.remove("bg-cyan-400");
+        dot.classList.add("bg-white/20");
+      }
+    });
+
+    if (urlEl) urlEl.textContent = urls[index] || "";
+    if (indicatorEl) indicatorEl.textContent = `${index + 1}/${slides.length}`;
+  }
+
+  function nextSlide() {
+    const next = (currentIndex + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function prevSlide() {
+    const prev = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
+
+  nextBtn?.addEventListener("click", () => {
+    nextSlide();
+    resetAuto();
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    prevSlide();
+    resetAuto();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      const index = parseInt(target.getAttribute("data-slide") || "0", 10);
+      showSlide(index);
+      resetAuto();
+    });
+  });
+
+  function startAuto() {
+    timer = setInterval(nextSlide, 4500);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  startAuto();
 </script>

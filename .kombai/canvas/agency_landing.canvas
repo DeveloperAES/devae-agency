@@ -90,7 +90,7 @@
       "created": "2026-06-24T15:40:52.597144+00:00",
       "modified": "2026-06-24T16:09:25.542180+00:00",
       "id": "var_fea7d62ff9db",
-      "viewportScrollY": 1190,
+      "viewportScrollY": 0,
       "overrides": {
         "htmlAttrs": " lang=\"en\"",
         "bodyAttrs": " class=\"bg-[#1A1110] text-[#DAA520] font-serif selection:bg-[#DAA520] selection:text-[#1A1110]\"",

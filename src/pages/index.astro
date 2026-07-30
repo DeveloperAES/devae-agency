@@ -16,17 +16,17 @@ import CustomCursor from "../components/CustomCursor.astro";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <link rel="icon" type="image/png" href="/favicon-ae.png?v=2" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="DevAE - Desarrollo Web & Arquitectura Digital por Anderson Espinoza. WordPress, e-commerce y sistemas a medida."
+      content="DevAE Studio - Estudio de Ingeniería Web & Arquitectura Digital por Anderson Espinoza. Aplicaciones web a medida, e-commerce ultra rápido y plataformas de alta conversión."
     />
     <title>
-      Anderson Espinoza · DevAE | Desarrollo Web & Arquitectura Digital
+      DevAE Studio | Estudio de Ingeniería Web & Arquitectura Digital
     </title>
   </head>
-  <body class="bg-(--color-onyx) text-white">
+  <body class="bg-[#0a0b0e] text-slate-100 font-space selection:bg-cyan-500/30 selection:text-cyan-200">
     <Navbar />
     <main>
       <HeroBento />
@@ -45,149 +45,30 @@ import CustomCursor from "../components/CustomCursor.astro";
 
       gsap.registerPlugin(ScrollTrigger);
 
-      /* Hero reveals */
-      gsap.from(".reveal-hero", {
-        autoAlpha: 0,
-        y: 30,
-        duration: 1,
-        stagger: 0.1,
-        ease: "power4.out",
-        delay: 0.3,
-      });
+      // Hero reveals
+      gsap.fromTo(".reveal-hero", 
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", delay: 0.1 }
+      );
 
-      /* Lighthouse score counter */
-      const counterEl = document.getElementById("latency-counter");
-      if (counterEl) {
-        const cObj = { v: 75 };
-        gsap.to(cObj, {
-          v: 99,
-          duration: 2.5,
-          ease: "power3.out",
-          onUpdate: () => {
-            counterEl.innerText = Math.floor(cObj.v).toString();
-          },
-          scrollTrigger: {
-            trigger: "#dashboard-bento",
-            start: "top center",
-          },
-        });
-      }
-
-      /* Services reveal */
-      gsap.from(".reveal-service", {
-        scrollTrigger: {
-          trigger: "#services",
-          start: "top 80%",
+      // Fail-safe ScrollTrigger batch for services, portfolio, pricing and bento cards
+      ScrollTrigger.batch(".reveal-service, .portfolio-item, .bento-card", {
+        start: "top 90%",
+        onEnter: (batch) => {
+          gsap.fromTo(batch,
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", overwrite: "auto" }
+          );
         },
-        autoAlpha: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
+        once: true
       });
 
-      /* Ledger reveal */
-      gsap.from(".reveal-ledger", {
-        scrollTrigger: {
-          trigger: "#tech",
-          start: "top 70%",
-        },
-        autoAlpha: 0,
-        x: -40,
-        duration: 0.9,
-        stagger: 0.15,
-        ease: "power2.out",
-      });
-
-      /* Portfolio reveal */
-      gsap.from(".reveal-portfolio", {
-        scrollTrigger: {
-          trigger: "#portfolio",
-          start: "top 80%",
-        },
-        autoAlpha: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-
-      /* Pricing reveal */
-      gsap.from(".reveal-pricing", {
-        scrollTrigger: {
-          trigger: "#pricing",
-          start: "top 80%",
-        },
-        autoAlpha: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-
-      /* Contact reveal */
-      gsap.from(".reveal-contact", {
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 75%",
-        },
-        autoAlpha: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
-
-      /* CTA Banner */
-      gsap.from("#cta-banner", {
-        scrollTrigger: {
-          trigger: "#cta-footer",
-          start: "top 80%",
-        },
-        autoAlpha: 0,
-        scale: 0.97,
-        duration: 1.2,
-        ease: "power4.out",
-      });
-
-      /* Portfolio image clip-path reveal */
-      document.querySelectorAll(".portfolio-reveal").forEach((img) => {
-        const htmlImg = img as HTMLElement;
-        gsap.to(htmlImg, {
-          clipPath: "inset(0 0 0 0)",
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: htmlImg,
-            start: "top 85%",
-          },
-        });
-
-        const parent = htmlImg.closest(".group");
-        if (parent) {
-          const isTouch = window.matchMedia("(pointer: coarse)").matches;
-          
-          if (!isTouch) {
-            parent.addEventListener("pointerenter", () => {
-              gsap.to(htmlImg, {
-                scale: 1.05,
-                filter: "grayscale(0%)",
-                duration: 0.6,
-              });
-            });
-            parent.addEventListener("pointerleave", () => {
-              gsap.to(htmlImg, {
-                scale: 1.0,
-                filter: "grayscale(100%)",
-                duration: 0.4,
-              });
-            });
-          } else {
-            // Keep colored on touch devices
-            gsap.set(htmlImg, { filter: "grayscale(0%)" });
-          }
-        }
+      // Refresh ScrollTrigger after images load
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
       });
     </script>
   </body>
 </html>
+
+

@@ -4,118 +4,77 @@ import AeLogo from "./AeLogo.astro";
 
 <nav
   id="main-nav"
-  class="fixed top-0 left-0 w-full z-50 px-6 py-5 flex justify-between items-center transition-all duration-300"
-  style="background: linear-gradient(to bottom, rgba(17,17,17,0.95) 0%, transparent 100%); backdrop-filter: blur(8px);"
+  class="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3 transition-all duration-300 pointer-events-auto"
 >
-  <a href="#" class="flex items-center gap-3 group relative z-10">
-    <AeLogo width={48} height={32} class="text-white" />
-    <div class="flex items-center gap-2">
-      <div
-        class="hidden lg:block font-anton text-lg uppercase tracking-tighter leading-none"
-      >
-        Agencia de <span class="text-(--color-gold)">Desarrollo Web</span>
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-2.5 rounded-full bg-[#0a0b0e]/92 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/80">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group relative z-10">
+      <AeLogo width={32} height={32} class="group-hover:scale-105 transition-transform" />
+      <div class="flex flex-col">
+        <span class="font-space text-base font-bold tracking-tight text-white flex items-center gap-2">
+          Dev<span class="text-cyan-400">AE</span>
+          <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Studio</span>
+        </span>
       </div>
-      <!-- <div class="text-[9px] uppercase tracking-[0.35em] opacity-40 font-bold">
-        DevAE · Dev Agency
-      </div> -->
-    </div>
-  </a>
-
-  <!-- Desktop links -->
-  <div
-    class="hidden lg:flex gap-8 items-center text-xs uppercase tracking-widest font-bold"
-  >
-    <a href="#services" class="hover:text-(--color-gold) transition-colors"
-      >Servicios</a
-    >
-    <a href="#tech" class="hover:text-(--color-gold) transition-colors"
-      >Tecnología</a
-    >
-    <a href="#portfolio" class="hover:text-(--color-gold) transition-colors"
-      >Portfolio</a
-    >
-    <a href="#pricing" class="hover:text-(--color-gold) transition-colors"
-      >Precios</a
-    >
-    <a
-      href="#contact"
-      class="px-6 py-2 border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors"
-    >
-      Contacto
     </a>
-  </div>
 
-  <!-- Mobile menu button -->
-  <button
-    id="mobile-menu-btn"
-    class="lg:hidden w-10 h-10 flex items-center justify-center border border-white/20 text-white relative z-10"
-    aria-label="Abrir menú"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-  >
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
+    <!-- Desktop Navigation Links -->
+    <div class="hidden lg:flex gap-7 items-center text-xs font-mono font-medium tracking-wide">
+      <a href="#services" class="text-slate-200 hover:text-cyan-400 transition-colors">Servicios</a>
+      <a href="#tech" class="text-slate-200 hover:text-cyan-400 transition-colors">Garantías</a>
+      <a href="#portfolio" class="text-slate-200 hover:text-cyan-400 transition-colors">Proyectos</a>
+      <a href="#pricing" class="text-slate-200 hover:text-cyan-400 transition-colors">Planes</a>
+      <a
+        href="#contact"
+        class="px-5 py-2.5 rounded-full font-space font-semibold text-xs text-slate-900 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-lg shadow-cyan-500/20 hover:scale-105"
+      >
+        Cotizar Proyecto
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden w-9 h-9 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white relative z-10 hover:bg-white/10 transition-colors"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </button>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
 
   <!-- Mobile menu overlay -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 z-10 min-h-screen bg-onyx/98 backdrop-blur-lg flex-col items-center justify-center gap-8 lg:hidden"
+    class="fixed inset-0 z-40 min-h-screen bg-[#0a0b0e]/95 backdrop-blur-2xl flex-col items-center justify-center gap-8 lg:hidden px-6 text-center"
     style="display: none;"
   >
     <button
       id="mobile-menu-close"
-      class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center border border-white/20 text-white"
+      class="absolute top-6 right-6 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 text-white"
       aria-label="Cerrar menú"
     >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
 
-    <a
-      href="#services"
-      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
-      >Servicios</a
-    >
-    <a
-      href="#tech"
-      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
-      >Tecnología</a
-    >
-    <a
-      href="#portfolio"
-      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors"
-      >Portfolio</a
-    >
-    <a
-      href="#pricing"
-      class="text-sm uppercase tracking-widest font-bold hover:text-(--color-gold) transition-colors font-bold"
-      >Precios</a
-    >
+    <a href="#services" class="text-xl font-space font-semibold text-slate-100 hover:text-cyan-400 transition-colors">Servicios</a>
+    <a href="#tech" class="text-xl font-space font-semibold text-slate-100 hover:text-cyan-400 transition-colors">Garantías</a>
+    <a href="#portfolio" class="text-xl font-space font-semibold text-slate-100 hover:text-cyan-400 transition-colors">Proyectos Realizados</a>
+    <a href="#pricing" class="text-xl font-space font-semibold text-slate-100 hover:text-cyan-400 transition-colors">Planes e Inversión</a>
+    
     <a
       href="#contact"
-      class="px-6 py-2 border border-white/20 hover:border-(--color-gold) hover:text-(--color-gold) transition-colors text-sm uppercase tracking-widest font-bold"
+      class="mt-4 px-8 py-3.5 rounded-full font-space font-semibold text-sm text-slate-900 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-xl shadow-cyan-500/25"
     >
-      Contacto
+      Iniciar Proyecto →
     </a>
   </div>
 </nav>
@@ -148,15 +107,15 @@ import AeLogo from "./AeLogo.astro";
     "scroll",
     () => {
       if (!nav) return;
-      if (window.scrollY > 80) {
-        nav.style.background = "rgba(17,17,17,0.97)";
-        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      if (window.scrollY > 40) {
+        nav.classList.add("py-2");
+        nav.classList.remove("py-4");
       } else {
-        nav.style.background =
-          "linear-gradient(to bottom, rgba(17,17,17,0.95) 0%, transparent 100%)";
-        nav.style.borderBottom = "1px solid transparent";
+        nav.classList.add("py-4");
+        nav.classList.remove("py-2");
       }
     },
     { passive: true },
   );
 </script>
+
