@@ -16,7 +16,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
     const RESEND_FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-    const CONTACT_EMAIL = import.meta.env.CONTACT_EMAIL || 'aespinozaanco@gmail.com';
+    const CONTACT_EMAIL = import.meta.env.CONTACT_EMAIL || 'aespinozaanco38@gmail.com';
 
     if (!RESEND_API_KEY) {
       // Modo de desarrollo: loguea el mensaje y responde OK
@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
       ].join(''),
     };
 
-    const response = await fetch('https://api.resend.com/emails', {
+    let response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${RESEND_API_KEY}`,
@@ -59,10 +59,27 @@ export const POST: APIRoute = async ({ request }) => {
       body: JSON.stringify(resendPayload),
     });
 
+    // Si falla por restricción de modo pruebas de Resend (enviar a un mail no registrado), reintenta con aespinozaanco@gmail.com
+    if (!response.ok && CONTACT_EMAIL !== 'aespinozaanco@gmail.com') {
+      console.warn('Reintentando envío a la cuenta registrada de Resend (aespinozaanco@gmail.com)...');
+      const fallbackPayload = {
+        ...resendPayload,
+        to: ['aespinozaanco@gmail.com'],
+      };
+      response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(fallbackPayload),
+      });
+    }
+
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Resend error:', errorText);
-      return new Response(JSON.stringify({ error: 'Error enviando el email' }), {
+      console.error('Resend error final:', errorText);
+      return new Response(JSON.stringify({ error: 'Error enviando el email', details: errorText }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });

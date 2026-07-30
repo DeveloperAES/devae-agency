@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
   const urls = [
     { url: 'https://ysique.com/', file: 'public/projects/ysique.png' },
     { url: 'https://oigperu.com.pe/', file: 'public/projects/oigperu.png' },
-    { url: 'https://andersonv9.sg-host.com/', file: 'public/projects/andersonv9.png' }
+    { url: 'https://www.olvacourier.com/', file: 'public/projects/andersonv9.png' }
   ];
 
   for (const item of urls) {

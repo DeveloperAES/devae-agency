@@ -1,8 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" fill="#111111" rx="10"/>
-  <!-- A letter -->
-  <path d="M8 48L20 16H26L38 48H31L28.5 41H17.5L15 48H8Z" fill="#D4AF37"/>
-  <path d="M19.5 36H26.5L23 24.5L19.5 36Z" fill="#111111"/>
-  <!-- E letter -->
-  <path d="M40 16H58V22H47V29H57V35H47V42H58V48H40V16Z" fill="#D4AF37"/>
+  <defs>
+    <linearGradient id="favicon-michi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Obsidian Background Container -->
+  <rect width="64" height="64" rx="18" fill="#0a0b0e" stroke="rgba(0, 242, 254, 0.3)" stroke-width="2" />
+
+  <!-- Pointy Cyber Ears -->
+  <path d="M12 28L18 10L28 20" fill="url(#favicon-michi-grad)" stroke="#00f2fe" stroke-width="2" />
+  <path d="M52 28L46 10L36 20" fill="url(#favicon-michi-grad)" stroke="#00f2fe" stroke-width="2" />
+
+  <!-- Cat Head Shape -->
+  <path
+    d="M32 18C20 18 12 26 12 36C12 48 21 54 32 54C43 54 52 48 52 36C52 26 44 18 32 18Z"
+    fill="#0a0b0e"
+    stroke="#00f2fe"
+    stroke-width="3"
+  />
+
+  <!-- Glowing Cyber Almond Eyes -->
+  <path d="M17 34C20 30 26 30 29 34C26 38 20 38 17 34Z" fill="#00f2fe" />
+  <path d="M47 34C44 30 38 30 35 34C38 38 44 38 47 34Z" fill="#00f2fe" />
+  
+  <!-- Pupils -->
+  <ellipse cx="23" cy="34" rx="1.6" ry="3.5" fill="#0a0b0e" />
+  <ellipse cx="41" cy="34" rx="1.6" ry="3.5" fill="#0a0b0e" />
+
+  <!-- Cute Nose -->
+  <path d="M32 40L30 43.5H34L32 40Z" fill="#fda085" />
+
+  <!-- Whiskers -->
+  <path d="M9 34H3M9 39H2M55 34H61M55 39H62" stroke="rgba(0, 242, 254, 0.7)" stroke-width="2" stroke-linecap="round" />
 </svg>

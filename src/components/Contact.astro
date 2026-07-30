@@ -3,100 +3,191 @@ import Icon from "./Icon.astro";
 import AeLogoBg from "./AeLogoBg.astro";
 ---
 
-<section id="contact" class="py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
+<section
+  id="contact"
+  class="py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden"
+>
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      
       <!-- Contact Info Sidebar (5 cols) -->
       <div class="lg:col-span-5 flex flex-col gap-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 w-fit">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 w-fit"
+        >
           <span>// INICIAR PROYECTO</span>
         </div>
 
-        <h2 class="font-space text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+        <h2
+          class="font-space text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight"
+        >
           Hablemos de tu <span class="gradient-text-cyan">próximo nivel</span>.
         </h2>
 
         <p class="text-sm text-gray-400 font-light leading-relaxed">
-          ¿Tienes un proyecto en mente o buscas un socio de ingeniería web para tu agenciar? Agenda una llamada de valoración o completa el formulario para recibir una propuesta en menos de 24h.
+          ¿Tienes un proyecto en mente o buscas un socio de ingeniería web para
+          tu agencia? Agenda una llamada de valoración o completa el formulario
+          para recibir una propuesta en menos de 24h.
         </p>
 
         <div class="space-y-4 pt-4 border-t border-white/10">
           <div class="bento-card p-4 flex items-center gap-4">
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <div
+              class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400"
+            >
               <Icon name="Mail" class="w-5 h-5" />
             </div>
             <div>
-              <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">Email Directo</span>
-              <a href="mailto:aespinozaanco38@gmail.com" class="text-sm font-semibold text-white hover:text-cyan-300 transition-colors font-mono">
+              <span
+                class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block"
+                >Email Directo</span
+              >
+              <a
+                href="mailto:aespinozaanco38@gmail.com"
+                class="text-sm font-semibold text-white hover:text-cyan-300 transition-colors font-mono"
+              >
                 aespinozaanco38@gmail.com
               </a>
             </div>
           </div>
 
           <div class="bento-card p-4 flex items-center gap-4">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400"
+            >
               <Icon name="MessageSquare" class="w-5 h-5" />
             </div>
             <div>
-              <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">WhatsApp / Asesoría Rápida</span>
-              <a href="https://wa.me/51991145635?text=Hola%20DevAE,%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-emerald-300 transition-colors font-mono">
+              <span
+                class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block"
+                >WhatsApp / Asesoría Rápida</span
+              >
+              <a
+                href="https://wa.me/51991145635?text=Hola%20Anderson%2C%20estuve%20revisando%20tu%20portafolio%20en%20DevAE%20Studio%20y%20me%20gustar%C3%ADa%20consultar%20sobre%20la%20disponibilidad%20para%20desarrollar%20un%20proyecto%20web.%20Quedo%20atento."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-white hover:text-emerald-300 transition-colors font-mono"
+              >
                 +51 991 145 635
               </a>
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- Contact Form Container (7 cols) -->
       <div class="lg:col-span-7 bento-card p-8 lg:p-10">
-        <form id="contact-form" method="POST" action="/api/contact" class="space-y-6">
-          
+        <form
+          id="contact-form"
+          method="POST"
+          action="/api/contact"
+          class="space-y-6"
+        >
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label for="name" class="block text-xs font-mono text-gray-300 mb-2">Nombre / Empresa *</label>
-              <input type="text" id="name" name="name" class="contact-input" placeholder="Ej. Carlos Mendoza" required />
+              <label
+                for="name"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >Nombre / Empresa *</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="contact-input"
+                placeholder="Ej. Carlos Mendoza"
+                required
+              />
             </div>
             <div>
-              <label for="email" class="block text-xs font-mono text-gray-300 mb-2">Correo Corporativo *</label>
-              <input type="email" id="email" name="email" class="contact-input" placeholder="carlos@empresa.com" required />
+              <label
+                for="email"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >Correo Corporativo *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact-input"
+                placeholder="carlos@empresa.com"
+                required
+              />
             </div>
           </div>
 
           <div>
-            <label for="project" class="block text-xs font-mono text-gray-300 mb-2">Tipo de Proyecto *</label>
+            <label
+              for="project"
+              class="block text-xs font-mono text-gray-300 mb-2"
+              >Tipo de Proyecto *</label
+            >
             <select id="project" name="project" class="contact-input" required>
-              <option value="" disabled selected>Selecciona una opción</option>
-              <option value="landing">Landing Page / Sprint MVP</option>
-              <option value="webapp">Aplicación Web / Plataforma Custom</option>
-              <option value="ecommerce">Tienda Online / E-Commerce</option>
-              <option value="whitelabel">Asociación White-Label para Agencia</option>
-              <option value="otro">Otro Requerimiento</option>
+              <option value="" disabled selected class="bg-[#12141f] text-slate-400">Selecciona una opción</option>
+              <option value="landing" class="bg-[#12141f] text-slate-100 py-2">Landing Page Vendedora</option>
+              <option value="webapp" class="bg-[#12141f] text-slate-100 py-2">Sitio Web o Tienda Online</option>
+              <option value="ecommerce" class="bg-[#12141f] text-slate-100 py-2">Sistema o Web a Medida</option>
+              <option value="whitelabel" class="bg-[#12141f] text-slate-100 py-2">Asociación White-Label para Agencia</option>
+              <option value="otro" class="bg-[#12141f] text-slate-100 py-2">Otro Requerimiento Especial</option>
             </select>
           </div>
 
           <div>
-            <label class="block text-xs font-mono text-gray-300 mb-2">Presupuesto Estimado</label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-options">
-              <label class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1">
-                <input type="radio" name="budget" value="S/ 790 - S/ 1,500" class="hidden" />
+            <label class="block text-xs font-mono text-gray-300 mb-2"
+              >Presupuesto Estimado</label
+            >
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 gap-3"
+              id="budget-options"
+            >
+              <label
+                class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1"
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="S/ 550 - S/ 1,100"
+                  class="hidden"
+                />
                 <span>S/ 790 – 1.5K</span>
               </label>
-              <label class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1">
-                <input type="radio" name="budget" value="S/ 1,500 - S/ 3,500" class="hidden" />
-                <span>S/ 1.5K – 3.5K</span>
+              <label
+                class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1"
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="S/ 1,100 - S/ 1,500"
+                  class="hidden"
+                />
+                <span>S/ 1.1K – 1.5K</span>
               </label>
-              <label class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1 col-span-2 sm:col-span-1">
-                <input type="radio" name="budget" value="S/ 3,500+" class="hidden" />
-                <span>S/ 3.5K+ / Retainer</span>
+              <label
+                class="px-3.5 py-2.5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 cursor-pointer hover:border-cyan-500/40 text-center transition-colors flex items-center justify-center gap-1 col-span-2 sm:col-span-1"
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="S/ 1,500+"
+                  class="hidden"
+                />
+                <span>S/ 1.5K+ / Retainer</span>
               </label>
             </div>
           </div>
 
           <div>
-            <label for="message" class="block text-xs font-mono text-gray-300 mb-2">Detalles del Proyecto *</label>
-            <textarea id="message" name="message" rows="4" class="contact-input resize-none" placeholder="Describe brevemente tus objetivos, referencias o plazos requeridos..." required></textarea>
+            <label
+              for="message"
+              class="block text-xs font-mono text-gray-300 mb-2"
+              >Detalles del Proyecto *</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="contact-input resize-none"
+              placeholder="Describe brevemente tus objetivos, referencias o plazos requeridos..."
+              required></textarea>
           </div>
 
           <button
@@ -109,37 +200,56 @@ import AeLogoBg from "./AeLogoBg.astro";
           </button>
 
           <!-- Feedback messages -->
-          <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono text-center">
+          <div
+            id="form-success"
+            class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono text-center"
+          >
             ✔ ¡Mensaje enviado con éxito! Te contactaremos en menos de 24 horas.
           </div>
-          <div id="form-error" class="hidden p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono text-center">
-            ✖ Ocurrió un error al enviar. Por favor intenta de nuevo o escríbenos directamente por WhatsApp.
+          <div
+            id="form-error"
+            class="hidden p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono text-center"
+          >
+            ✖ Ocurrió un error al enviar. Por favor intenta de nuevo o
+            escríbenos directamente por WhatsApp.
           </div>
-
         </form>
       </div>
-
     </div>
   </div>
 </section>
 
 <script>
-  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const form = document.getElementById(
+    "contact-form",
+  ) as HTMLFormElement | null;
   const budgetOptions = document.querySelectorAll("#budget-options label");
 
   budgetOptions.forEach((label) => {
     const input = label.querySelector("input");
     input?.addEventListener("change", () => {
-      budgetOptions.forEach((l) => l.classList.remove("border-cyan-500", "bg-cyan-500/10", "text-cyan-300"));
+      budgetOptions.forEach((l) =>
+        l.classList.remove(
+          "border-cyan-500",
+          "bg-cyan-500/10",
+          "text-cyan-300",
+        ),
+      );
       if (input.checked) {
-        label.classList.add("border-cyan-500", "bg-cyan-500/10", "text-cyan-300");
+        label.classList.add(
+          "border-cyan-500",
+          "bg-cyan-500/10",
+          "text-cyan-300",
+        );
       }
     });
   });
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+    const submitBtn = document.getElementById(
+      "submit-btn",
+    ) as HTMLButtonElement | null;
     const successEl = document.getElementById("form-success");
     const errorEl = document.getElementById("form-error");
 
@@ -161,7 +271,13 @@ import AeLogoBg from "./AeLogoBg.astro";
         successEl?.classList.remove("hidden");
         errorEl?.classList.add("hidden");
         form.reset();
-        budgetOptions.forEach((l) => l.classList.remove("border-cyan-500", "bg-cyan-500/10", "text-cyan-300"));
+        budgetOptions.forEach((l) =>
+          l.classList.remove(
+            "border-cyan-500",
+            "bg-cyan-500/10",
+            "text-cyan-300",
+          ),
+        );
       } else {
         errorEl?.classList.remove("hidden");
         successEl?.classList.add("hidden");
@@ -175,4 +291,3 @@ import AeLogoBg from "./AeLogoBg.astro";
     }
   });
 </script>
-
