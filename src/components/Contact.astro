@@ -82,6 +82,13 @@ import AeLogoBg from "./AeLogoBg.astro";
           action="/api/contact"
           class="space-y-6"
         >
+          <!-- Honeypot anti-spam field (Oculto para humanos) -->
+          <div class="hidden" aria-hidden="true">
+            <label for="website_url">No llenar este campo</label>
+            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+            <input type="hidden" id="form_timestamp" name="form_timestamp" value="" />
+          </div>
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label
@@ -115,20 +122,78 @@ import AeLogoBg from "./AeLogoBg.astro";
             </div>
           </div>
 
-          <div>
-            <label
-              for="project"
-              class="block text-xs font-mono text-gray-300 mb-2"
-              >Tipo de Proyecto *</label
-            >
-            <select id="project" name="project" class="contact-input" required>
-              <option value="" disabled selected class="bg-[#12141f] text-slate-400">Selecciona una opción</option>
-              <option value="landing" class="bg-[#12141f] text-slate-100 py-2">Landing Page Vendedora</option>
-              <option value="webapp" class="bg-[#12141f] text-slate-100 py-2">Sitio Web o Tienda Online</option>
-              <option value="ecommerce" class="bg-[#12141f] text-slate-100 py-2">Sistema o Web a Medida</option>
-              <option value="whitelabel" class="bg-[#12141f] text-slate-100 py-2">Asociación White-Label para Agencia</option>
-              <option value="otro" class="bg-[#12141f] text-slate-100 py-2">Otro Requerimiento Especial</option>
-            </select>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="phone"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >Teléfono / WhatsApp *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="contact-input"
+                placeholder="+51 999 888 777"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="country"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >País *</label
+              >
+              <select id="country" name="country" class="contact-input" required>
+                <option value="" disabled selected class="bg-[#12141f] text-slate-400">Selecciona tu país</option>
+                <option value="Perú" class="bg-[#12141f] text-slate-100 py-2">🇵🇪 Perú</option>
+                <option value="México" class="bg-[#12141f] text-slate-100 py-2">🇲🇽 México</option>
+                <option value="Colombia" class="bg-[#12141f] text-slate-100 py-2">🇨🇴 Colombia</option>
+                <option value="Chile" class="bg-[#12141f] text-slate-100 py-2">🇨🇱 Chile</option>
+                <option value="Argentina" class="bg-[#12141f] text-slate-100 py-2">🇦🇷 Argentina</option>
+                <option value="España" class="bg-[#12141f] text-slate-100 py-2">🇪🇸 España</option>
+                <option value="Estados Unidos" class="bg-[#12141f] text-slate-100 py-2">🇺🇸 Estados Unidos</option>
+                <option value="Ecuador" class="bg-[#12141f] text-slate-100 py-2">🇪🇨 Ecuador</option>
+                <option value="Bolivia" class="bg-[#12141f] text-slate-100 py-2">🇧🇴 Bolivia</option>
+                <option value="Costa Rica" class="bg-[#12141f] text-slate-100 py-2">🇨🇷 Costa Rica</option>
+                <option value="Panamá" class="bg-[#12141f] text-slate-100 py-2">🇵🇦 Panamá</option>
+                <option value="Guatemala" class="bg-[#12141f] text-slate-100 py-2">🇬🇹 Guatemala</option>
+                <option value="Uruguay" class="bg-[#12141f] text-slate-100 py-2">🇺🇾 Uruguay</option>
+                <option value="Otro" class="bg-[#12141f] text-slate-100 py-2">🌐 Otro país</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="city"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >Ciudad / Región</label
+              >
+              <input
+                type="text"
+                id="city"
+                name="city"
+                class="contact-input"
+                placeholder="Ej. Lima, CDMX, Madrid..."
+              />
+            </div>
+            <div>
+              <label
+                for="project"
+                class="block text-xs font-mono text-gray-300 mb-2"
+                >Tipo de Proyecto *</label
+              >
+              <select id="project" name="project" class="contact-input" required>
+                <option value="" disabled selected class="bg-[#12141f] text-slate-400">Selecciona una opción</option>
+                <option value="landing" class="bg-[#12141f] text-slate-100 py-2">Landing Page Vendedora</option>
+                <option value="webapp" class="bg-[#12141f] text-slate-100 py-2">Sitio Web o Tienda Online</option>
+                <option value="ecommerce" class="bg-[#12141f] text-slate-100 py-2">Sistema o Web a Medida</option>
+                <option value="whitelabel" class="bg-[#12141f] text-slate-100 py-2">Asociación White-Label para Agencia</option>
+                <option value="otro" class="bg-[#12141f] text-slate-100 py-2">Otro Requerimiento Especial</option>
+              </select>
+            </div>
           </div>
 
           <div>
@@ -190,6 +255,37 @@ import AeLogoBg from "./AeLogoBg.astro";
               required></textarea>
           </div>
 
+          <!-- Captcha Anti-Spam Widget -->
+          <div class="p-4 rounded-xl bg-white/[0.03] border border-cyan-500/20 backdrop-blur-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="captcha_answer" class="text-xs font-mono text-cyan-400 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Seguridad Anti-Spam (Captcha) *</span>
+              </label>
+              <button type="button" id="refresh-captcha-btn" class="text-[11px] font-mono text-gray-400 hover:text-cyan-300 transition-colors flex items-center gap-1 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+                <span>Nuevo desafío</span>
+              </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+              <div class="sm:col-span-6 px-4 py-3 rounded-lg bg-[#0d101a] border border-cyan-500/30 text-center font-mono text-cyan-300 text-sm font-semibold tracking-wider select-none shadow-inner flex items-center justify-center gap-2">
+                <span class="text-xs text-gray-400">Calcula:</span>
+                <span id="captcha-question">Cargando...</span>
+              </div>
+              <div class="sm:col-span-6">
+                <input
+                  type="number"
+                  id="captcha_answer"
+                  name="captcha_answer"
+                  class="contact-input text-center font-mono font-semibold"
+                  placeholder="Tu respuesta"
+                  required
+                />
+              </div>
+            </div>
+            <input type="hidden" id="captcha_token" name="captcha_token" value="" />
+          </div>
+
           <button
             type="submit"
             id="submit-btn"
@@ -224,6 +320,37 @@ import AeLogoBg from "./AeLogoBg.astro";
     "contact-form",
   ) as HTMLFormElement | null;
   const budgetOptions = document.querySelectorAll("#budget-options label");
+
+  // Captcha Generator & Anti-Spam timestamp
+  let numA = 0;
+  let numB = 0;
+
+  function generateCaptcha() {
+    numA = Math.floor(Math.random() * 12) + 3;
+    numB = Math.floor(Math.random() * 9) + 2;
+    const questionEl = document.getElementById("captcha-question");
+    const tokenEl = document.getElementById("captcha_token") as HTMLInputElement | null;
+    const answerEl = document.getElementById("captcha_answer") as HTMLInputElement | null;
+
+    if (questionEl) {
+      questionEl.textContent = `${numA} + ${numB} = ?`;
+    }
+    if (tokenEl) {
+      tokenEl.value = btoa(`${numA}:${numB}:${numA + numB}`);
+    }
+    if (answerEl) {
+      answerEl.value = "";
+    }
+  }
+
+  // Initialize timestamp & captcha
+  const timestampEl = document.getElementById("form_timestamp") as HTMLInputElement | null;
+  if (timestampEl) {
+    timestampEl.value = Date.now().toString();
+  }
+  generateCaptcha();
+
+  document.getElementById("refresh-captcha-btn")?.addEventListener("click", generateCaptcha);
 
   budgetOptions.forEach((label) => {
     const input = label.querySelector("input");
@@ -267,10 +394,13 @@ import AeLogoBg from "./AeLogoBg.astro";
         body: JSON.stringify(data),
       });
 
+      const result = await response.json().catch(() => ({}));
+
       if (response.ok) {
         successEl?.classList.remove("hidden");
         errorEl?.classList.add("hidden");
         form.reset();
+        generateCaptcha();
         budgetOptions.forEach((l) =>
           l.classList.remove(
             "border-cyan-500",
@@ -279,12 +409,22 @@ import AeLogoBg from "./AeLogoBg.astro";
           ),
         );
       } else {
-        errorEl?.classList.remove("hidden");
+        if (errorEl) {
+          errorEl.textContent = result.error
+            ? `✖ ${result.error}`
+            : "✖ Ocurrió un error al enviar. Por favor intenta de nuevo o escríbenos por WhatsApp.";
+          errorEl.classList.remove("hidden");
+        }
         successEl?.classList.add("hidden");
+        generateCaptcha();
       }
     } catch {
-      errorEl?.classList.remove("hidden");
+      if (errorEl) {
+        errorEl.textContent = "✖ Ocurrió un error al enviar. Por favor intenta de nuevo o escríbenos por WhatsApp.";
+        errorEl.classList.remove("hidden");
+      }
       successEl?.classList.add("hidden");
+      generateCaptcha();
     } finally {
       submitBtn.disabled = false;
       submitBtn.style.opacity = "1";

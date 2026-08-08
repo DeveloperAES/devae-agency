@@ -27,4 +27,11 @@ pnpm-debug.log*
 .idea/
 
 # agents
-.agents
+.agents
+
+# Media & Video recordings
+*.mp4
+*.mov
+*.webm
+*.avi
+

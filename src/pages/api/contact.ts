@@ -5,10 +5,72 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    const { name, email, project, budget, message } = data;
+    const {
+      name,
+      email,
+      phone,
+      country,
+      city,
+      project,
+      budget,
+      message,
+      website_url,
+      form_timestamp,
+      captcha_token,
+      captcha_answer,
+    } = data;
 
-    if (!name || !email || !project || !message) {
-      return new Response(JSON.stringify({ error: 'Faltan campos requeridos' }), {
+    // 1. Filtro Honeypot: Si un bot llena el campo invisible 'website_url', engañar al bot respondiendo 200 sin enviar correo
+    if (website_url) {
+      console.warn('Bot capturado por Honeypot:', { email, website_url });
+      return new Response(JSON.stringify({ success: true, mode: 'bot_filtered' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    // 2. Filtro de velocidad de envío (< 1.5s es bot automatizado)
+    if (form_timestamp) {
+      const elapsed = Date.now() - Number(form_timestamp);
+      if (elapsed < 1500) {
+        console.warn(`Envío demasiado rápido bloqueado (${elapsed}ms)`);
+        return new Response(JSON.stringify({ error: 'Envío demasiado rápido. Por favor intenta de nuevo.' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // 3. Verificación de Captcha
+    if (!captcha_token || !captcha_answer) {
+      return new Response(JSON.stringify({ error: 'Por favor responde al Captcha de seguridad' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    try {
+      const decodedToken = Buffer.from(captcha_token, 'base64').toString('utf-8');
+      const [numA, numB, expectedSum] = decodedToken.split(':');
+      if (
+        Number(numA) + Number(numB) !== Number(captcha_answer) ||
+        Number(expectedSum) !== Number(captcha_answer)
+      ) {
+        return new Response(JSON.stringify({ error: 'Respuesta de Captcha incorrecta. Inténtalo de nuevo.' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    } catch {
+      return new Response(JSON.stringify({ error: 'Verificación de Captcha inválida' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    // 4. Validación de campos obligatorios
+    if (!name || !email || !phone || !country || !project || !message) {
+      return new Response(JSON.stringify({ error: 'Faltan campos requeridos (*)' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -23,6 +85,9 @@ export const POST: APIRoute = async ({ request }) => {
       console.log('Contact form submission (Resend no configurado):', {
         name,
         email,
+        phone,
+        country,
+        city,
         project,
         budget,
         message,
@@ -34,11 +99,13 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
+    const locationText = city ? `${country} (${city})` : country;
+
     const resendPayload = {
       from: `DevAE Contacto <${RESEND_FROM_EMAIL}>`,
       to: [CONTACT_EMAIL],
       reply_to: email,
-      subject: `Nuevo mensaje de ${name} - ${project}`,
+      subject: `Nuevo mensaje de ${name} (${country}) - ${project}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -73,6 +140,16 @@ export const POST: APIRoute = async ({ request }) => {
             <div class="field">
               <span class="label">Correo Electrónico</span>
               <div class="value"><a href="mailto:${email}" style="color: #00f2fe; text-decoration: none;">${email}</a></div>
+            </div>
+
+            <div class="field">
+              <span class="label">Teléfono / WhatsApp</span>
+              <div class="value"><a href="tel:${phone}" style="color: #00f2fe; text-decoration: none;">${phone}</a></div>
+            </div>
+
+            <div class="field">
+              <span class="label">Ubicación (País / Ciudad)</span>
+              <div class="value">${locationText}</div>
             </div>
 
             <div class="field">
