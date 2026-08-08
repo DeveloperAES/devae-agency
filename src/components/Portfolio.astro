@@ -30,19 +30,32 @@ const projects = [
   },
   {
     id: 3,
+    title: "Experiencias Arawak",
+    client: "Agencia de Viajes & Turismo",
+    category: "Turismo",
+    tags: ["Reserva de Tours", "Tours Selva Central", "Integración WhatsApp"],
+    image: "/projects/arawak.png",
+    wide: false,
+    aspect: "aspect-[4/3]",
+    link: "https://arawak-tours.infinityfree.me/?i=1",
+    status: "EN VIVO",
+    impact: "Plataforma turística para reservas de paquetes y tours en la Selva Central del Perú."
+  },
+  {
+    id: 4,
     title: "Olva Tracking Platform",
     client: "Sistema Logístico & Control de Envíos",
     category: "Sistema",
     tags: ["Sistema de Envíos", "Rastreo en Tiempo Real", "Portal de Clientes"],
     image: "/projects/andersonv9.png",
-    wide: false,
-    aspect: "aspect-[4/3]",
+    wide: true,
+    aspect: "aspect-[16/9]",
     link: "https://www.olvacourier.com/",
     status: "EN VIVO",
     impact: "Automatizó las consultas de envíos y rastreo de paquetes."
   },
   {
-    id: 4,
+    id: 5,
     title: "Olva Tracking",
     client: "Plataforma de seguimiento de envios",
     category: "En Desarrollo",
@@ -78,6 +91,12 @@ const projects = [
           class="filter-btn px-4 py-2 rounded-full border border-cyan-500 bg-cyan-500/10 text-cyan-300 font-semibold transition-all"
         >
           Todos
+        </button>
+        <button
+          data-filter="Turismo"
+          class="filter-btn px-4 py-2 rounded-full border border-white/15 text-slate-300 hover:border-cyan-500/50 hover:text-white transition-all"
+        >
+          Turismo
         </button>
         <button
           data-filter="E-commerce"
